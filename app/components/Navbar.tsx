@@ -2,9 +2,10 @@
 
 import { AnchorHTMLAttributes, PropsWithChildren } from "react";
 import { cn } from "../utils/cn";
-import { HomeIcon, SunIcon } from "@heroicons/react/24/outline";
+import { HomeIcon } from "@heroicons/react/24/outline";
 import { Typography } from "./Typography";
 import useScrollSpy from "../hooks/useScrollSpy";
+import ThemeDropdown from "./ThemeDropdown";
 
 function NavbarItem({
   children,
@@ -48,7 +49,7 @@ function Navbar({ sectionIds }: NavbarProps) {
           </NavbarItem>
         ))}
       </ul>
-      <SunIcon className="h-5 w-5" />
+      <ThemeDropdown />
     </nav>
   );
 }
