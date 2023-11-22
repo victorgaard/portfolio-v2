@@ -17,7 +17,7 @@ function NavbarItem({
       <a
         href={href}
         className={cn(
-          "flex h-10 items-center rounded-full px-4 font-medium hover:bg-zinc-800",
+          "flex h-10 select-none items-center rounded-full px-4 font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800",
           className,
         )}
       >
@@ -32,17 +32,18 @@ type NavbarProps = {
 };
 
 function Navbar({ sectionIds }: NavbarProps) {
-  const activeId = useScrollSpy(sectionIds, 54);
+  const activeId = useScrollSpy(sectionIds, 54) || 'home';
   return (
     <nav className="fixed top-8 flex w-full items-center justify-between px-12">
       <Typography.H5 className="font-bold">V</Typography.H5>
-      <ul className="flex items-center justify-center gap-1 rounded-full border border-zinc-800 bg-zinc-950 p-1">
+      <ul className="flex items-center justify-center gap-1 rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
         {sectionIds.map((id) => (
           <NavbarItem
             key={id}
             href={`#${id}`}
             className={cn("capitalize transition-all", {
-              "bg-white text-zinc-900 hover:bg-white": id === activeId,
+              "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-white":
+                id === activeId,
             })}
           >
             {id === "home" ? <HomeIcon className="h-5 w-5" /> : id}

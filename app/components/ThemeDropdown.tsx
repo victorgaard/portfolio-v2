@@ -20,7 +20,7 @@ function ThemeDropdown() {
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -28,10 +28,8 @@ function ThemeDropdown() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 p-1">
-        <div className="flex h-10 items-center rounded-full px-4 font-medium text-white hover:bg-zinc-800">
-          <ComputerDesktopIcon className="h-5 w-5 animate-pulse" />
-        </div>
+      <div className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="h-10 w-[52px] animate-pulse rounded-full bg-zinc-50 px-4 dark:bg-zinc-900/50" />
       </div>
     );
   }
@@ -48,8 +46,8 @@ function ThemeDropdown() {
       open={isDropdownOpen}
       onOpenChange={(open) => setIsDropdownOpen(open)}
     >
-      <DropdownMenu.Trigger className="flex items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 p-1">
-        <div className="flex h-10 items-center rounded-full px-4 font-medium text-white hover:bg-zinc-800">
+      <DropdownMenu.Trigger className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="flex h-10 items-center rounded-full px-4 font-medium text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-800">
           {dropdownOptions[currentTheme]}
         </div>
       </DropdownMenu.Trigger>
@@ -57,7 +55,7 @@ function ThemeDropdown() {
         {isDropdownOpen && (
           <DropdownMenu.Portal forceMount>
             <DropdownMenu.Content
-              className="rounded-xl border border-zinc-800 bg-zinc-900 p-1"
+              className="rounded-xl border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
               align="end"
               sideOffset={8}
               asChild
@@ -81,7 +79,7 @@ function ThemeDropdown() {
                 {Object.keys(dropdownOptions).map((option) => (
                   <DropdownMenu.Item
                     key={option}
-                    className="flex h-10 w-40 select-none items-center justify-between gap-8 rounded-md px-2 text-sm font-medium capitalize text-white hover:bg-zinc-800"
+                    className="flex h-10 w-40 select-none items-center justify-between gap-8 rounded-md px-2 text-sm font-medium capitalize text-zinc-900 hover:bg-zinc-100 hover:focus-visible:outline-0 hover:focus-visible:ring-0 dark:text-white dark:hover:bg-zinc-800"
                     onClick={() => {
                       setCurrentTheme(option as Theme);
                       setTheme(option);
