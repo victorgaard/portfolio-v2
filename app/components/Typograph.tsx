@@ -3,7 +3,7 @@ import { cn } from "../utils/cn";
 
 export function Typography() {
   throw new Error(
-    `<Typography> is not a component, use child components instead: <Typography.Paragraph>...</Typography.Paragraph>`
+    `<Typography> is not a component, use child components instead: <Typography.Paragraph>...</Typography.Paragraph>`,
   );
 }
 
@@ -13,7 +13,7 @@ function H1({
   ...rest
 }: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 className={cn("text-4xl text-red-600", className)} {...rest}>
+    <h1 className={cn("text-5xl", className)} {...rest}>
       {children}
     </h1>
   );
@@ -25,7 +25,7 @@ function H2({
   ...rest
 }: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={cn("text-2xl", className)} {...rest}>
+    <h2 className={cn("text-4xl", className)} {...rest}>
       {children}
     </h2>
   );
@@ -37,9 +37,45 @@ function H3({
   ...rest
 }: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={cn("text-xl", className)} {...rest}>
+    <h3 className={cn("text-3xl", className)} {...rest}>
       {children}
     </h3>
+  );
+}
+
+function H4({
+  children,
+  className,
+  ...rest
+}: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h4 className={cn("text-2xl", className)} {...rest}>
+      {children}
+    </h4>
+  );
+}
+
+function H5({
+  children,
+  className,
+  ...rest
+}: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h5 className={cn("text-xl", className)} {...rest}>
+      {children}
+    </h5>
+  );
+}
+
+function H6({
+  children,
+  className,
+  ...rest
+}: PropsWithChildren & HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h6 className={cn("text-lg", className)} {...rest}>
+      {children}
+    </h6>
   );
 }
 
@@ -58,4 +94,7 @@ function Paragraph({
 Typography.H1 = H1;
 Typography.H2 = H2;
 Typography.H3 = H3;
+Typography.H4 = H4;
+Typography.H5 = H5;
+Typography.H6 = H6;
 Typography.Paragraph = Paragraph;
