@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import { Typography } from "./components/Typograph";
+import { Typography } from "./components/Typography";
 
 export default function Home() {
   const sectionIds = [

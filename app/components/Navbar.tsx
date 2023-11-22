@@ -3,7 +3,7 @@
 import { AnchorHTMLAttributes, PropsWithChildren } from "react";
 import { cn } from "../utils/cn";
 import { HomeIcon, SunIcon } from "@heroicons/react/24/outline";
-import { Typography } from "./Typograph";
+import { Typography } from "./Typography";
 import useScrollSpy from "../hooks/useScrollSpy";
 
 function NavbarItem({
