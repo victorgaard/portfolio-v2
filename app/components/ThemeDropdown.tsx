@@ -7,14 +7,34 @@ import {
   ComputerDesktopIcon,
 } from "@heroicons/react/24/outline";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import getThemeFromLocalStorage from "../utils/getThemeFromLocalStorage";
 import { AnimatePresence, motion } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { useTheme } from "next-themes";
+import { ReactNode, useEffect, useState } from "react";
 
-type Theme = "system" | "light" | "dark";
+export type Theme = "system" | "light" | "dark";
 
 function ThemeDropdown() {
-  const [currentTheme, setCurrentTheme] = useState<Theme>("system");
+  const [currentTheme, setCurrentTheme] = useState<Theme>(
+    getThemeFromLocalStorage(),
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="flex items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 p-1">
+        <div className="flex h-10 items-center rounded-full px-4 font-medium text-white hover:bg-zinc-800">
+          <ComputerDesktopIcon className="h-5 w-5 animate-pulse" />
+        </div>
+      </div>
+    );
+  }
 
   const dropdownOptions: Record<Theme, ReactNode> = {
     system: <ComputerDesktopIcon className="h-5 w-5" />,
@@ -61,8 +81,11 @@ function ThemeDropdown() {
                 {Object.keys(dropdownOptions).map((option) => (
                   <DropdownMenu.Item
                     key={option}
-                    className="flex h-10 w-40 select-none items-center font-medium justify-between gap-8 rounded-md px-2 text-sm capitalize text-white hover:bg-zinc-800"
-                    onClick={() => setCurrentTheme(option as Theme)}
+                    className="flex h-10 w-40 select-none items-center justify-between gap-8 rounded-md px-2 text-sm font-medium capitalize text-white hover:bg-zinc-800"
+                    onClick={() => {
+                      setCurrentTheme(option as Theme);
+                      setTheme(option);
+                    }}
                   >
                     <span className="flex items-center gap-3">
                       <span className="text-zinc-400">
@@ -71,7 +94,7 @@ function ThemeDropdown() {
                       {option}
                     </span>
                     {currentTheme === option && (
-                      <CheckIcon className="animate-fade-in-long h-5 w-5 shrink-0 text-zinc-400" />
+                      <CheckIcon className="h-5 w-5 shrink-0 animate-fade-in-long text-zinc-400" />
                     )}
                   </DropdownMenu.Item>
                 ))}

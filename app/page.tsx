@@ -10,7 +10,7 @@ export default function Home() {
     "playground",
   ];
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between bg-zinc-950">
+    <main className="relative flex min-h-screen flex-col items-center justify-between">
       <Navbar sectionIds={sectionIds} />
       <header
         id="home"

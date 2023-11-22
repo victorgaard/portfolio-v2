@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./provider/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="antialiased scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body
+        className={`${inter.className} scroll-smooth bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-white`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
