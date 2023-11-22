@@ -79,7 +79,7 @@ function ThemeDropdown() {
                 {Object.keys(dropdownOptions).map((option) => (
                   <DropdownMenu.Item
                     key={option}
-                    className="flex h-10 w-40 select-none items-center justify-between gap-8 rounded-md px-2 text-sm font-medium capitalize text-zinc-900 hover:bg-zinc-100 hover:focus-visible:outline-0 hover:focus-visible:ring-0 dark:text-white dark:hover:bg-zinc-800"
+                    className="flex h-10 w-40 select-none items-center justify-between gap-8 rounded-md px-2 text-sm font-medium capitalize text-zinc-900 hover:bg-zinc-100 hover:focus-visible:outline-none hover:focus-visible:ring-0 dark:text-white dark:hover:bg-zinc-800"
                     onClick={() => {
                       setCurrentTheme(option as Theme);
                       setTheme(option);
