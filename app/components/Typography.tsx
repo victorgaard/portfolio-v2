@@ -85,7 +85,10 @@ function Paragraph({
   ...rest
 }: PropsWithChildren & HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-sm", className)} {...rest}>
+    <p
+      className={cn("text-base text-zinc-600 dark:text-zinc-400", className)}
+      {...rest}
+    >
       {children}
     </p>
   );

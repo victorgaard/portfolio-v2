@@ -2,10 +2,8 @@
 
 import { AnchorHTMLAttributes, PropsWithChildren } from "react";
 import { cn } from "../utils/cn";
-import { HomeIcon } from "@heroicons/react/24/outline";
-import { Typography } from "./Typography";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import useScrollSpy from "../hooks/useScrollSpy";
-import ThemeDropdown from "./ThemeDropdown";
 
 function NavbarItem({
   children,
@@ -17,7 +15,7 @@ function NavbarItem({
       <a
         href={href}
         className={cn(
-          "flex h-10 select-none items-center rounded-full px-4 font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800",
+          "flex h-10 select-none items-center rounded-full px-4 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800",
           className,
         )}
       >
@@ -32,25 +30,37 @@ type NavbarProps = {
 };
 
 function Navbar({ sectionIds }: NavbarProps) {
-  const activeId = useScrollSpy(sectionIds, 54) || 'home';
+  const activeId = useScrollSpy(sectionIds, 54) || "about";
   return (
-    <nav className="fixed top-8 flex w-full items-center justify-between px-12">
-      <Typography.H5 className="font-bold">V</Typography.H5>
-      <ul className="flex items-center justify-center gap-1 rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-        {sectionIds.map((id) => (
-          <NavbarItem
-            key={id}
-            href={`#${id}`}
-            className={cn("capitalize transition-all", {
-              "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-white":
-                id === activeId,
-            })}
-          >
-            {id === "home" ? <HomeIcon className="h-5 w-5" /> : id}
-          </NavbarItem>
-        ))}
+    <nav className="mr-auto w-48">
+      <ul className="flex flex-col gap-1">
+        {sectionIds.map((id) => {
+          const isActive = id === activeId;
+          return (
+            <NavbarItem
+              key={id}
+              href={`#${id}`}
+              className={cn(
+                "flex items-center overflow-hidden bg-transparent capitalize transition-all",
+                {
+                  "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-white":
+                    isActive,
+                },
+              )}
+            >
+              <ArrowLongRightIcon
+                className={cn(
+                  "h-5 w-5 shrink-0 -translate-x-10 transition-transform",
+                  {
+                    "mr-3 translate-x-0": isActive,
+                  },
+                )}
+              />
+              {id}
+            </NavbarItem>
+          );
+        })}
       </ul>
-      <ThemeDropdown />
     </nav>
   );
 }

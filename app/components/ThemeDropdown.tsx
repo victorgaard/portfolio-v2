@@ -28,7 +28,7 @@ function ThemeDropdown() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
+      <div className="flex mr-auto items-center justify-center rounded-full border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
         <div className="h-10 w-[52px] animate-pulse rounded-full bg-zinc-50 px-4 dark:bg-zinc-900/50" />
       </div>
     );
@@ -46,7 +46,7 @@ function ThemeDropdown() {
       open={isDropdownOpen}
       onOpenChange={(open) => setIsDropdownOpen(open)}
     >
-      <DropdownMenu.Trigger className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+      <DropdownMenu.Trigger className="mr-auto flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex h-10 items-center rounded-full px-4 font-medium text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-800">
           {dropdownOptions[currentTheme]}
         </div>
@@ -56,7 +56,7 @@ function ThemeDropdown() {
           <DropdownMenu.Portal forceMount>
             <DropdownMenu.Content
               className="rounded-xl border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
-              align="end"
+              align="start"
               sideOffset={8}
               asChild
             >
