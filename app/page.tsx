@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Socials from "./components/Socials";
 import ThemeDropdown from "./components/ThemeDropdown";
 import { Typography } from "./components/Typography";
 
@@ -26,10 +27,11 @@ export default function Home() {
             </Typography.Paragraph>
           </div>
           <Navbar sectionIds={sectionIds} />
-          <ThemeDropdown />
+          <Socials />
         </aside>
-        <div className="py-20">
-          <section id="about" className="h-[2000px] flex flex-col gap-6 w-full [text-wrap:balance]">
+        <div>
+          <section id="about" className="pt-20 h-[2000px] flex flex-col gap-6 w-full [text-wrap:balance]">
+          <ThemeDropdown />
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
