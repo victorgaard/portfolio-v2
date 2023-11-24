@@ -30,7 +30,7 @@ type NavbarProps = {
 };
 
 function Navbar({ sectionIds }: NavbarProps) {
-  const activeId = useScrollSpy(sectionIds, 54) || "about";
+  const activeId = useScrollSpy(sectionIds, 200) || "about";
   return (
     <nav className="mr-auto w-48">
       <ul className="flex flex-col gap-1">

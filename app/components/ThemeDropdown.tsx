@@ -28,7 +28,7 @@ function ThemeDropdown() {
 
   if (!mounted) {
     return (
-      <div className="flex mr-auto items-center justify-center rounded-full border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
+      <div className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 dark:border-zinc-800 dark:bg-zinc-950">
         <div className="h-10 w-[52px] animate-pulse rounded-full bg-zinc-50 px-4 dark:bg-zinc-900/50" />
       </div>
     );
@@ -46,7 +46,7 @@ function ThemeDropdown() {
       open={isDropdownOpen}
       onOpenChange={(open) => setIsDropdownOpen(open)}
     >
-      <DropdownMenu.Trigger className="mr-auto flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+      <DropdownMenu.Trigger className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex h-10 items-center rounded-full px-4 font-medium text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-800">
           {dropdownOptions[currentTheme]}
         </div>
@@ -64,15 +64,15 @@ function ThemeDropdown() {
                 initial={{
                   opacity: 0,
                   scaleY: 0.35,
-                  originY: 0,
-                  y: -10,
+                  originY: 2,
+                  y: 10,
                 }}
                 animate={{ opacity: 1, scaleY: 1, originY: 0, y: 0 }}
                 exit={{
                   opacity: 0,
-                  originY: 0,
+                  originY: 1,
                   scaleY: 0.9,
-                  y: -5,
+                  y: 5,
                   transition: { duration: 0.2 },
                 }}
               >

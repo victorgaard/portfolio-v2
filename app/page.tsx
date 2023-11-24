@@ -1,7 +1,8 @@
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Socials from "./components/Socials";
-import ThemeDropdown from "./components/ThemeDropdown";
+import Footer from "./components/Footer";
 import { Typography } from "./components/Typography";
+import Section from "./components/Section";
 
 export default function Home() {
   const sectionIds = [
@@ -15,23 +16,15 @@ export default function Home() {
     <main className="relative min-h-screen px-24">
       <div className="relative mx-auto grid w-full max-w-5xl grid-cols-2">
         <aside className="sticky left-0 top-0 flex h-screen flex-col justify-between py-20">
-          <div className="flex flex-col gap-1.5">
-            <Typography.H2 className="font-bold tracking-tight">
-              Victor F. Santos
-            </Typography.H2>
-            <Typography.H5 className="font-medium tracking-tight">
-              Frontend Engineer
-            </Typography.H5>
-            <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-              Building things to look cool as shit and who knows where it goes?
-            </Typography.Paragraph>
+          <div className="flex flex-col gap-16">
+            <Hero />
+            <Navbar sectionIds={sectionIds} />
           </div>
-          <Navbar sectionIds={sectionIds} />
-          <Socials />
+          <Footer />
         </aside>
         <div>
-          <section id="about" className="pt-20 h-[2000px] flex flex-col gap-6 w-full [text-wrap:balance]">
-          <ThemeDropdown />
+          <Section id="about">
+            <Typography.H3>About</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
@@ -44,11 +37,43 @@ export default function Home() {
               adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
               exercitationem quisquam itaque illum?
             </Typography.Paragraph>
-          </section>
-          <section id="recommendations" className="h-[2000px] w-full" />
-          <section id="projects" className="h-[2000px] w-full" />
-          <section id="experience" className="h-[2000px] w-full" />
-          <section id="playground" className="h-[2000px] w-full" />
+          </Section>
+          <Section id="recommendations">
+            <Typography.H3>Recommendations</Typography.H3>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              illum atque consequatur, iusto eum sed recusandae a placeat ut
+              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
+              exercitationem quisquam itaque illum?
+            </Typography.Paragraph>
+          </Section>
+          <Section id="projects">
+            <Typography.H3>Projects</Typography.H3>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              illum atque consequatur, iusto eum sed recusandae a placeat ut
+              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
+              exercitationem quisquam itaque illum?
+            </Typography.Paragraph>
+          </Section>
+          <Section id="experience">
+            <Typography.H3>Experience</Typography.H3>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              illum atque consequatur, iusto eum sed recusandae a placeat ut
+              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
+              exercitationem quisquam itaque illum?
+            </Typography.Paragraph>
+          </Section>
+          <Section id="playground">
+            <Typography.H3>Playground</Typography.H3>
+            <Typography.Paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              illum atque consequatur, iusto eum sed recusandae a placeat ut
+              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
+              exercitationem quisquam itaque illum?
+            </Typography.Paragraph>
+          </Section>
         </div>
       </div>
     </main>

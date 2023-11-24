@@ -2,10 +2,12 @@ import { DocumentArrowDownIcon } from "@heroicons/react/20/solid";
 import GithubIcon from "../icons/GithubIcon";
 import LinkedInIcon from "../icons/LinkedInIcon";
 import Tooltip from "./Tooltip";
+import ThemeDropdown from "./ThemeDropdown";
 
-function Socials() {
+function Footer() {
   return (
-    <div className="flex items-center gap-5">
+    <footer className="flex items-center gap-5">
+      <ThemeDropdown />
       <a
         href="https://github.com/victorgaard"
         target="_blank"
@@ -33,8 +35,8 @@ function Socials() {
         <DocumentArrowDownIcon className="peer h-[26px] w-[26px] text-zinc-600 transition-all hover:text-zinc-900 dark:text-zinc-400 hover:dark:text-white" />
         <Tooltip>Download CV</Tooltip>
       </a>
-    </div>
+    </footer>
   );
 }
 
-export default Socials;
+export default Footer;
