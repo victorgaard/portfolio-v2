@@ -1,6 +1,6 @@
 import { Typography } from "@components/Typography";
 
-function Hero() {
+function Summary() {
   return (
     <div className="flex flex-col gap-1.5">
       <Typography.H2 className="font-bold tracking-tight">
@@ -10,10 +10,10 @@ function Hero() {
         Frontend Engineer
       </Typography.H5>
       <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-        Building things to look cool as shit and who knows where it goes?
+        I build value-driven products for the web.
       </Typography.Paragraph>
     </div>
   );
 }
 
-export default Hero;
+export default Summary;
