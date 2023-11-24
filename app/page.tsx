@@ -13,9 +13,9 @@ export default function Home() {
     "playground",
   ];
   return (
-    <main className="relative min-h-screen px-24">
-      <div className="relative mx-auto grid w-full max-w-5xl grid-cols-2">
-        <aside className="sticky left-0 top-0 flex h-screen flex-col justify-between py-20">
+    <main className="relative min-h-screen px-8 md:px-24">
+      <div className="relative mx-auto grid w-full max-w-5xl md:grid-cols-2">
+        <aside className="left-0 top-0 flex flex-col-reverse gap-8 md:gap-0 justify-between py-8 md:sticky md:h-screen md:flex-col md:py-20">
           <div className="flex flex-col gap-16">
             <Hero />
             <Navbar sectionIds={sectionIds} />
@@ -24,7 +24,6 @@ export default function Home() {
         </aside>
         <div>
           <Section id="about">
-            <Typography.H3>About</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
@@ -39,7 +38,6 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="recommendations">
-            <Typography.H3>Recommendations</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
@@ -48,7 +46,6 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="projects">
-            <Typography.H3>Projects</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
@@ -57,7 +54,6 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="experience">
-            <Typography.H3>Experience</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut
@@ -66,7 +62,6 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="playground">
-            <Typography.H3>Playground</Typography.H3>
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut

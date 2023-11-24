@@ -32,7 +32,7 @@ type NavbarProps = {
 function Navbar({ sectionIds }: NavbarProps) {
   const activeId = useScrollSpy(sectionIds, 200) || "about";
   return (
-    <nav className="mr-auto w-48">
+    <nav className="mr-auto hidden w-48 md:block">
       <ul className="flex flex-col gap-1">
         {sectionIds.map((id) => {
           const isActive = id === activeId;
