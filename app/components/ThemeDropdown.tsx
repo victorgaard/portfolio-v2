@@ -5,12 +5,14 @@ import {
   MoonIcon,
   SunIcon,
   ComputerDesktopIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import getThemeFromLocalStorage from "../utils/getThemeFromLocalStorage";
+import getThemeFromLocalStorage from "@utils/getThemeFromLocalStorage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { ReactNode, useEffect, useState } from "react";
+import { cn } from "@utils/cn";
 
 export type Theme = "system" | "light" | "dark";
 
@@ -21,6 +23,12 @@ function ThemeDropdown() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { setTheme } = useTheme();
+
+  const dropdownOptions: Record<Theme, ReactNode> = {
+    system: <ComputerDesktopIcon className="h-5 w-5" />,
+    light: <SunIcon className="h-5 w-5" />,
+    dark: <MoonIcon className="h-5 w-5" />,
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -34,12 +42,6 @@ function ThemeDropdown() {
     );
   }
 
-  const dropdownOptions: Record<Theme, ReactNode> = {
-    system: <ComputerDesktopIcon className="h-5 w-5" />,
-    light: <SunIcon className="h-5 w-5" />,
-    dark: <MoonIcon className="h-5 w-5" />,
-  };
-
   return (
     <DropdownMenu.Root
       modal={false}
@@ -47,8 +49,22 @@ function ThemeDropdown() {
       onOpenChange={(open) => setIsDropdownOpen(open)}
     >
       <DropdownMenu.Trigger className="flex items-center justify-center rounded-full border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="flex h-10 items-center rounded-full px-4 font-medium text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-800">
-          {dropdownOptions[currentTheme]}
+        <div className="relative flex h-10 flex-col items-center justify-center overflow-hidden rounded-full px-4 font-medium text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-800">
+          <div
+            className={cn("translate-y-1/2 opacity-100 transition-transform", {
+              "-translate-y-full opacity-50": isDropdownOpen,
+            })}
+          >
+            {dropdownOptions[currentTheme]}
+          </div>
+          <ChevronDownIcon
+            className={cn(
+              "h-5 w-5 translate-y-full opacity-50 transition-transform",
+              {
+                "-translate-y-1/2 opacity-100": isDropdownOpen,
+              },
+            )}
+          />
         </div>
       </DropdownMenu.Trigger>
       <AnimatePresence>
@@ -56,16 +72,18 @@ function ThemeDropdown() {
           <DropdownMenu.Portal forceMount>
             <DropdownMenu.Content
               className="rounded-xl border border-zinc-200 bg-white p-1 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
-              align="start"
               sideOffset={8}
+              align="start"
+              side="top"
               asChild
+              loop
             >
               <motion.div
                 initial={{
                   opacity: 0,
-                  scaleY: 0.35,
-                  originY: 2,
-                  y: 10,
+                  scaleY: 0.45,
+                  originY: 1.35,
+                  y: 5,
                 }}
                 animate={{ opacity: 1, scaleY: 1, originY: 0, y: 0 }}
                 exit={{

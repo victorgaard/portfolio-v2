@@ -1,4 +1,4 @@
-import { Typography } from "./Typography";
+import { Typography } from "@components/Typography";
 
 function Hero() {
   return (

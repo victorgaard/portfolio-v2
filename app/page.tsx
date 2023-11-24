@@ -1,8 +1,8 @@
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import { Typography } from "./components/Typography";
-import Section from "./components/Section";
+import Hero from "@components/Hero";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+import Section from "@components/Section";
+import { Typography } from "@components/Typography";
 
 export default function Home() {
   const sectionIds = [

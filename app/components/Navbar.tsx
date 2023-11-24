@@ -1,9 +1,9 @@
 "use client";
 
 import { AnchorHTMLAttributes, PropsWithChildren } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@utils/cn";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import useScrollSpy from "../hooks/useScrollSpy";
+import useScrollSpy from "@hooks/useScrollSpy";
 
 function NavbarItem({
   children,
@@ -43,7 +43,7 @@ function Navbar({ sectionIds }: NavbarProps) {
               className={cn(
                 "flex items-center overflow-hidden bg-transparent capitalize transition-all",
                 {
-                  "bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-white":
+                  "bg-zinc-900 text-white  hover:bg-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-white":
                     isActive,
                 },
               )}
