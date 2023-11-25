@@ -10,7 +10,7 @@ function Summary() {
         Frontend Engineer
       </Typography.H5>
       <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-        I build value-driven products for the web.
+        victorSantos();
       </Typography.Paragraph>
     </div>
   );
