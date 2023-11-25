@@ -1,4 +1,4 @@
-import { Theme } from "components/ThemeDropdown";
+import { Theme } from "@components/ThemeDropdown";
 
 function getThemeFromLocalStorage(): Theme {
   if (typeof window !== "undefined") {

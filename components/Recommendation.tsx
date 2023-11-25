@@ -1,4 +1,4 @@
-import { cn } from "utils/cn";
+import { cn } from "@utils/cn";
 import Image from "next/image";
 import { ImgHTMLAttributes, PropsWithChildren } from "react";
 
@@ -30,11 +30,16 @@ function Title({ children }: PropsWithChildren) {
   return <>{children}</>;
 }
 
+function Relationship({ children }: PropsWithChildren) {
+  return <>{children}</>;
+}
+
 function Message({ children }: PropsWithChildren) {
   return <>{children}</>;
 }
 
 Recommendation.Name = Name;
 Recommendation.Title = Title;
+Recommendation.Relationship = Relationship;
 Recommendation.Message = Message;
 Recommendation.Picture = Picture;

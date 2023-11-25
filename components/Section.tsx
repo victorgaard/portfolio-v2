@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { Typography } from "./Typography";
+import { Typography } from "@components/Typography";
 
 type SectionProps = PropsWithChildren & {
   id: string;

@@ -1,11 +1,11 @@
-import Summary from "components/Summary";
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
-import Section from "components/Section";
-import { Typography } from "components/Typography";
-import TextLink from "components/TextLink";
-import { Recommendation } from "components/Recommendation";
-import { recommendations } from "static/global";
+import Summary from "@components/Summary";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+import Section from "@components/Section";
+import { Typography } from "@components/Typography";
+import TextLink from "@components/TextLink";
+import { Recommendation } from "@components/Recommendation";
+import { recommendations } from "@static/global";
 
 export default function Home() {
   const sectionIds = [
@@ -85,6 +85,9 @@ export default function Home() {
                 <Recommendation.Title>
                   {recommendation.title}
                 </Recommendation.Title>
+                <Recommendation.Relationship>
+                  {recommendation.relationship}
+                </Recommendation.Relationship>
                 {recommendation.message.map((m) => (
                   <Recommendation.Message key={m.paragraph}>
                     {m.paragraph}

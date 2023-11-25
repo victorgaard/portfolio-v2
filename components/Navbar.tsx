@@ -1,9 +1,9 @@
 "use client";
 
 import { AnchorHTMLAttributes, PropsWithChildren } from "react";
-import { cn } from "utils/cn";
+import { cn } from "@utils/cn";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import useScrollSpy from "hooks/useScrollSpy";
+import useScrollSpy from "@hooks/useScrollSpy";
 
 function NavbarItem({
   children,

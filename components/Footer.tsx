@@ -1,12 +1,12 @@
 import { DocumentArrowDownIcon } from "@heroicons/react/20/solid";
-import GithubIcon from "icons/GithubIcon";
-import LinkedInIcon from "icons/LinkedInIcon";
-import Tooltip from "components/Tooltip";
-import ThemeDropdown from "components/ThemeDropdown";
+import GithubIcon from "@icons/GithubIcon";
+import LinkedInIcon from "@icons/LinkedInIcon";
+import Tooltip from "@components/Tooltip";
+import ThemeDropdown from "@components/ThemeDropdown";
 
 function Footer() {
   return (
-    <footer className="flex items-center justify-between md:gap-5 md:justify-normal">
+    <footer className="flex items-center justify-between md:justify-normal md:gap-5">
       <ThemeDropdown />
       <div className="flex items-center gap-8 md:gap-5">
         <a

@@ -24,6 +24,7 @@
       "@hooks/*": ["hooks/*"],
       "@icons/*": ["icons/*"],
       "@providers/*": ["providers/*"],
+      "@static/*": ["static/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
     }
