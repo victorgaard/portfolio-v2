@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, PropsWithChildren, forwardRef } from "react";
-import { cn } from "@utils/cn";
+import { cn } from "utils/cn";
 
 const Button = forwardRef<
   HTMLButtonElement,

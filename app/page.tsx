@@ -1,9 +1,11 @@
-import Summary from "@components/Summary";
-import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
-import Section from "@components/Section";
-import { Typography } from "@components/Typography";
-import TextLink from "@components/TextLink";
+import Summary from "components/Summary";
+import Navbar from "components/Navbar";
+import Footer from "components/Footer";
+import Section from "components/Section";
+import { Typography } from "components/Typography";
+import TextLink from "components/TextLink";
+import { Recommendation } from "components/Recommendation";
+import { recommendations } from "static/global";
 
 export default function Home() {
   const sectionIds = [
@@ -76,12 +78,20 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="recommendations">
-            <Typography.Paragraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              illum atque consequatur, iusto eum sed recusandae a placeat ut
-              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
-              exercitationem quisquam itaque illum?
-            </Typography.Paragraph>
+            {recommendations.map((recommendation) => (
+              <Recommendation key={recommendation.name}>
+                <Recommendation.Picture src={recommendation.picture} />
+                <Recommendation.Name>{recommendation.name}</Recommendation.Name>
+                <Recommendation.Title>
+                  {recommendation.title}
+                </Recommendation.Title>
+                {recommendation.message.map((m) => (
+                  <Recommendation.Message key={m.paragraph}>
+                    {m.paragraph}
+                  </Recommendation.Message>
+                ))}
+              </Recommendation>
+            ))}
           </Section>
           <Section id="projects">
             <Typography.Paragraph>

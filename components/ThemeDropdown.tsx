@@ -1,18 +1,18 @@
 "use client";
 
 import {
-  CheckIcon,
-  MoonIcon,
-  SunIcon,
-  ComputerDesktopIcon,
-  ChevronDownIcon,
+    CheckIcon,
+    MoonIcon,
+    SunIcon,
+    ComputerDesktopIcon,
+    ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import getThemeFromLocalStorage from "@utils/getThemeFromLocalStorage";
+import getThemeFromLocalStorage from "utils/getThemeFromLocalStorage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { ReactNode, useEffect, useState } from "react";
-import { cn } from "@utils/cn";
+import { cn } from "utils/cn";
 
 export type Theme = "system" | "light" | "dark";
 

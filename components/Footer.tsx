@@ -1,8 +1,8 @@
 import { DocumentArrowDownIcon } from "@heroicons/react/20/solid";
-import GithubIcon from "@icons/GithubIcon";
-import LinkedInIcon from "@icons/LinkedInIcon";
-import Tooltip from "@components/Tooltip";
-import ThemeDropdown from "@components/ThemeDropdown";
+import GithubIcon from "icons/GithubIcon";
+import LinkedInIcon from "icons/LinkedInIcon";
+import Tooltip from "components/Tooltip";
+import ThemeDropdown from "components/ThemeDropdown";
 
 function Footer() {
   return (
