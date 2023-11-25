@@ -79,14 +79,24 @@ function H6({
   );
 }
 
+type ParagraphProps = PropsWithChildren &
+  HTMLAttributes<HTMLParagraphElement> & {
+    extraContrast?: boolean;
+  };
+
 function Paragraph({
   children,
   className,
+  extraContrast = false,
   ...rest
-}: PropsWithChildren & HTMLAttributes<HTMLParagraphElement>) {
+}: ParagraphProps) {
   return (
     <p
-      className={cn("text-base text-zinc-600 dark:text-zinc-400", className)}
+      className={cn(
+        "text-base text-zinc-600 dark:text-zinc-400",
+        { "text-zinc-900 dark:text-white": extraContrast },
+        className,
+      )}
       {...rest}
     >
       {children}

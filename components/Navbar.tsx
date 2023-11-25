@@ -4,6 +4,7 @@ import { AnchorHTMLAttributes, PropsWithChildren } from "react";
 import { cn } from "@utils/cn";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import useScrollSpy from "@hooks/useScrollSpy";
+import { sections } from "@static/global";
 
 function NavbarItem({
   children,
@@ -25,16 +26,12 @@ function NavbarItem({
   );
 }
 
-type NavbarProps = {
-  sectionIds: string[];
-};
-
-function Navbar({ sectionIds }: NavbarProps) {
-  const activeId = useScrollSpy(sectionIds, 300) || "about";
+function Navbar() {
+  const activeId = useScrollSpy(sections, 300) || "about";
   return (
     <nav className="mr-auto hidden w-48 md:block">
       <ul className="flex flex-col gap-1">
-        {sectionIds.map((id) => {
+        {sections.map((id) => {
           const isActive = id === activeId;
           return (
             <NavbarItem

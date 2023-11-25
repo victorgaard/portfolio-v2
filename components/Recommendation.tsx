@@ -1,45 +1,62 @@
 import { cn } from "@utils/cn";
 import Image from "next/image";
-import { ImgHTMLAttributes, PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
+import { Typography } from "@components/Typography";
+import Button from "./Button";
 
 export function Recommendation({ children }: PropsWithChildren) {
-  return <>{children}</>;
+  return <div className="flex flex-col gap-3">{children}</div>;
 }
 
-type PictureProps = ImgHTMLAttributes<HTMLImageElement> & {
-  src: string;
+type HeaderProps = {
+  name: string;
+  title: string;
+  picture: string;
+  relationship: string;
 };
 
-function Picture({ src, className }: PictureProps) {
+function Header({ name, title, picture, relationship }: HeaderProps) {
   return (
-    <Image
-      src={src}
-      alt="avatar"
-      width={32}
-      height={32}
-      className={cn("h-8 w-8", className)}
-    />
+    <div className="flex items-center gap-4">
+      <Image
+        src={picture}
+        alt="avatar"
+        width={56}
+        height={56}
+        className="h-14 w-14 rounded-full"
+      />
+      <div>
+        <Typography.Paragraph className="font-semibold" extraContrast>
+          {name}
+        </Typography.Paragraph>
+        <Typography.Paragraph className="text-sm" extraContrast>
+          {title}
+        </Typography.Paragraph>
+        <Typography.Paragraph className="text-sm">
+          {relationship}
+        </Typography.Paragraph>
+      </div>
+    </div>
   );
 }
 
-function Name({ children }: PropsWithChildren) {
-  return <>{children}</>;
-}
-
-function Title({ children }: PropsWithChildren) {
-  return <>{children}</>;
-}
-
-function Relationship({ children }: PropsWithChildren) {
-  return <>{children}</>;
-}
-
 function Message({ children }: PropsWithChildren) {
-  return <>{children}</>;
+  const [isExpanded, setIsExpanded] = useState(false);
+  return (
+    <div>
+      <Typography.Paragraph
+        className={cn("line-clamp-4", {
+          "line-clamp-none": isExpanded,
+        })}
+      >
+        &ldquo;{children}&rdquo;
+      </Typography.Paragraph>
+      <Button onClick={() => setIsExpanded(!isExpanded)}>
+        {isExpanded ? "close" : "expand"}
+      </Button>
+    </div>
+  );
 }
 
-Recommendation.Name = Name;
-Recommendation.Title = Title;
-Recommendation.Relationship = Relationship;
+Recommendation.Header = Header;
 Recommendation.Message = Message;
-Recommendation.Picture = Picture;
