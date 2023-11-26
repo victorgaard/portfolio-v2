@@ -2,10 +2,16 @@ import { cn } from "@utils/cn";
 import Image from "next/image";
 import { PropsWithChildren, useState } from "react";
 import { Typography } from "@components/Typography";
-import Button from "./Button";
+import TextLink from "./TextLink";
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 
-export function Recommendation({ children }: PropsWithChildren) {
-  return <div className="flex flex-col gap-3">{children}</div>;
+type RecommendationProps = PropsWithChildren & { id: number };
+export function Recommendation({ children, id }: RecommendationProps) {
+  return (
+    <div id={`recommendation-${id}`} className="flex flex-col gap-3">
+      {children}
+    </div>
+  );
 }
 
 type HeaderProps = {
@@ -40,10 +46,12 @@ function Header({ name, title, picture, relationship }: HeaderProps) {
   );
 }
 
-function Message({ children }: PropsWithChildren) {
+type MessageProps = PropsWithChildren & { id: number };
+
+function Message({ children, id }: MessageProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <Typography.Paragraph
         className={cn("line-clamp-4", {
           "line-clamp-none": isExpanded,
@@ -51,9 +59,23 @@ function Message({ children }: PropsWithChildren) {
       >
         &ldquo;{children}&rdquo;
       </Typography.Paragraph>
-      <Button onClick={() => setIsExpanded(!isExpanded)}>
-        {isExpanded ? "close" : "expand"}
-      </Button>
+      <TextLink
+        href={`#recommendation-${id}`}
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex items-center gap-2 mr-auto"
+      >
+        {isExpanded ? (
+          <>
+            <MinusIcon className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+            Close
+          </>
+        ) : (
+          <>
+            <PlusIcon className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
+            Read more...
+          </>
+        )}
+      </TextLink>
     </div>
   );
 }

@@ -6,20 +6,23 @@ import { Recommendation } from "@components/Recommendation";
 
 function Recommendations() {
   return (
-    <Section id="recommendations" title="Worked together 💪" className="gap-10">
-      {recommendations.map((recommendation) => (
-        <Recommendation key={recommendation.name}>
-          <Recommendation.Header
-            name={recommendation.name}
-            title={recommendation.title}
-            relationship={recommendation.relationship}
-            picture={recommendation.picture}
-          />
-          <Recommendation.Message>
-            {recommendation.message}
-          </Recommendation.Message>
-        </Recommendation>
-      ))}
+    <Section id="recommendations" title="Worked together 💪" className="gap-12">
+      {recommendations.map((recommendation, idx) => {
+        const id = idx + 1;
+        return (
+          <Recommendation key={recommendation.name} id={id}>
+            <Recommendation.Header
+              name={recommendation.name}
+              title={recommendation.title}
+              relationship={recommendation.relationship}
+              picture={recommendation.picture}
+            />
+            <Recommendation.Message id={id}>
+              {recommendation.message}
+            </Recommendation.Message>
+          </Recommendation>
+        );
+      })}
     </Section>
   );
 }
