@@ -4,7 +4,7 @@ import Section from "@components/Section";
 import { recommendations } from "@static/global";
 import { Recommendation } from "@components/Recommendation";
 
-function Recommendations() {
+function SectionRecommendations() {
   return (
     <Section id="recommendations" title="Worked together 💪" className="gap-12">
       {recommendations.map((recommendation, idx) => {
@@ -27,4 +27,4 @@ function Recommendations() {
   );
 }
 
-export default Recommendations;
+export default SectionRecommendations;

@@ -3,8 +3,9 @@ import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import Section from "@components/Section";
 import { Typography } from "@components/Typography";
-import Recommendations from "@components/Recommendations";
-import About from "@components/About";
+import SectionRecommendations from "@components/SectionRecommendations";
+import SectionAbout from "@components/SectionAbout";
+import SectionExperience from "@components/SectionExperience";
 
 export default function Home() {
   return (
@@ -18,8 +19,9 @@ export default function Home() {
           <Footer />
         </aside>
         <div>
-          <About />
-          <Recommendations />
+          <SectionAbout />
+          <SectionRecommendations />
+          <SectionExperience />
           <Section id="projects">
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
@@ -29,14 +31,6 @@ export default function Home() {
             </Typography.Paragraph>
           </Section>
           <Section id="open source">
-            <Typography.Paragraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-              illum atque consequatur, iusto eum sed recusandae a placeat ut
-              adipisci ullam, mollitia tempore? Molestiae, dolorum! Sit
-              exercitationem quisquam itaque illum?
-            </Typography.Paragraph>
-          </Section>
-          <Section id="experience">
             <Typography.Paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
               illum atque consequatur, iusto eum sed recusandae a placeat ut

@@ -1,9 +1,9 @@
 export const sections = [
   "about",
   "recommendations",
+  "experience",
   "projects",
   "open source",
-  "experience",
   "playground",
 ];
 
@@ -37,5 +37,48 @@ export const recommendations: Recommendation[] = [
     As a professional, Victor is very forthcoming - he's kind but will let you know if something is not working out as expected. The courage to tell the truth, even if it's not a popular opinion while being compassionate about the situation tremendously contributes to the conversation and helps drive the product forward meaningfully to customers and his team.
   
     I highly recommend Victor to anyone looking for a talented product engineer with a keen eye for top-notch products.`,
+  },
+];
+
+type Experience = {
+  role: string;
+  company: string;
+  logo: string;
+  start: string;
+  end: string | null;
+  stack: string[];
+  responsibilities: string[];
+};
+
+export const experience: Experience[] = [
+  {
+    role: "Frontend Engineer",
+    company: "Tailwarden",
+    logo: "logo/tailwarden.svg",
+    start: "2022-06-01",
+    end: null,
+    stack: [
+      "Next.js",
+      "React",
+      "Typescript",
+      "Tailwind",
+      "React Query",
+      "Storybook",
+      "Jest",
+      "React Testing Library",
+    ],
+    responsibilities: [
+      `Migrated Tailwarden & Komiser from Angular to React on CTO's request`,
+      `Defined the base architecture and new framework of choice (Next.js, Typescript & Tailwind)`,
+      `Implemented authentication with AWS Cognito/Amplify`,
+      `Collaborated with our product designers via design reviews and weekly meetings`,
+      `Actively developed core features (cloud inventory, tag management, filters, custom views, dashboard widgets, custom reports & more)`,
+      `Participated in the hiring process of new engineers`,
+      `Documented components on Storybook`,
+      `Wrote unit tests with Jest and React Testing Library`,
+      `Documented current architecture as a living document on Notion so the new engineers can learn from it, but also improve and challenge our ways of working`,
+      `Reviewed pull requests and joined pair-programming sessions`,
+      `Showcased features and improvements during our weekly all hands meeting`,
+    ],
   },
 ];

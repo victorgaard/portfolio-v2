@@ -1,8 +1,8 @@
-import Section from "./Section";
-import TextLink from "./TextLink";
-import { Typography } from "./Typography";
+import Section from "@components/Section";
+import TextLink from "@components/TextLink";
+import { Typography } from "@components/Typography";
 
-function About() {
+function SectionAbout() {
   return (
     <Section id="about" title="Hey, I'm Victor 👋">
       <Typography.Paragraph>
@@ -55,4 +55,4 @@ function About() {
   );
 }
 
-export default About;
+export default SectionAbout;
