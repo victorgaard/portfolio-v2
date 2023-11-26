@@ -44,10 +44,15 @@ type Experience = {
   role: string;
   company: string;
   logo: string;
+  site: string;
   start: string;
   end: string | null;
   stack: string[];
   responsibilities: string[];
+  links: {
+    label: string;
+    href: string;
+  }[];
 };
 
 export const experience: Experience[] = [
@@ -55,6 +60,7 @@ export const experience: Experience[] = [
     role: "Frontend Engineer",
     company: "Tailwarden",
     logo: "logo/tailwarden.svg",
+    site: "https://tailwarden.com",
     start: "2022-06-01",
     end: null,
     stack: [
@@ -64,8 +70,7 @@ export const experience: Experience[] = [
       "Tailwind",
       "React Query",
       "Storybook",
-      "Jest",
-      "React Testing Library",
+      "Jest & Testing Library",
     ],
     responsibilities: [
       `Migrated Tailwarden & Komiser from Angular to React on CTO's request`,
@@ -73,12 +78,10 @@ export const experience: Experience[] = [
       `Implemented authentication with AWS Cognito/Amplify`,
       `Collaborated with our product designers via design reviews and weekly meetings`,
       `Actively developed core features (cloud inventory, tag management, filters, custom views, dashboard widgets, custom reports & more)`,
-      `Participated in the hiring process of new engineers`,
-      `Documented components on Storybook`,
-      `Wrote unit tests with Jest and React Testing Library`,
-      `Documented current architecture as a living document on Notion so the new engineers can learn from it, but also improve and challenge our ways of working`,
-      `Reviewed pull requests and joined pair-programming sessions`,
-      `Showcased features and improvements during our weekly all hands meeting`,
+    ],
+    links: [
+      { label: "Tailwarden", href: "https://tailwarden.com" },
+      { label: "Komiser", href: "https://komiser.io" },
     ],
   },
 ];
