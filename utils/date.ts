@@ -8,7 +8,7 @@ export function format(date: Date) {
 export function timeAgo(date: Date) {
   const currentDate = new Date();
   const yearDiff = currentDate.getFullYear() - date.getFullYear();
-  const monthDiff = currentDate.getMonth() - date.getMonth();
+  const monthDiff = currentDate.getMonth() - (date.getMonth() - 1);
 
   let result = "";
 

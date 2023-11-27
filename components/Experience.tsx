@@ -2,13 +2,22 @@ import { PropsWithChildren } from "react";
 import { Typography } from "@components/Typography";
 import Image from "next/image";
 import { format, timeAgo } from "@utils/date";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { ArrowUpRightIcon, LinkIcon } from "@heroicons/react/24/outline";
+import Badge from "./Badge";
+import TextLink from "./TextLink";
+import { Experience as ExperienceType } from "@static/global";
 
-export function Experience({ children }: PropsWithChildren) {
+type ExperienceProps = PropsWithChildren & {
+  url: string;
+};
+export function Experience({ children, url }: ExperienceProps) {
   return (
-    <div className="group relative -mx-4 flex flex-col gap-5 rounded-lg border-t border-transparent p-4 transition-all hover:border-zinc-800 hover:dark:bg-zinc-900">
+    <div
+      onClick={() => window.open(url, "_blank")}
+      className="group relative -mx-4 flex cursor-pointer flex-col gap-5 rounded-lg border-t border-transparent p-4 transition-all hover:border-zinc-200 hover:bg-zinc-100 hover:dark:border-zinc-800 hover:dark:bg-zinc-900"
+    >
       {children}
-      <div className="absolute right-4 top-4 hidden group-hover:block">
+      <div className="absolute right-6 top-6 hidden group-hover:block">
         <ArrowUpRightIcon className="h-5 w-5 animate-fade-in-up" />
       </div>
     </div>
@@ -45,7 +54,7 @@ function Summary({ role, company, start, end }: SummaryProps) {
   return (
     <div className="flex flex-col">
       <Typography.Paragraph className="font-semibold" extraContrast>
-        {role} · {company}
+        {role} at {company}
       </Typography.Paragraph>
       <Typography.Paragraph className="text-xs font-semibold uppercase">
         {startDate} — {endDate} · {time}
@@ -55,31 +64,73 @@ function Summary({ role, company, start, end }: SummaryProps) {
 }
 
 function Content({ children }: PropsWithChildren) {
+  return <div className="flex flex-col gap-2">{children}</div>;
+}
+
+function Description({ children }: PropsWithChildren) {
+  return <Typography.Paragraph>{children}</Typography.Paragraph>;
+}
+
+type ResponsibilitiesProps = {
+  responsibilities: ExperienceType["responsibilities"];
+};
+
+function Responsibilities({ responsibilities }: ResponsibilitiesProps) {
   return (
     <ul className="ml-3 list-disc marker:text-zinc-200 dark:marker:text-zinc-700">
-      {children}
+      {responsibilities.map((responsibility) => (
+        <li className="pl-1.5" key={responsibility}>
+          <Typography.Paragraph className="inline text-sm" extraContrast>
+            {responsibility}
+          </Typography.Paragraph>
+        </li>
+      ))}
     </ul>
   );
 }
 
-function Item({ children }: PropsWithChildren) {
+function Footer({ children }: PropsWithChildren) {
+  return <div className="flex flex-col gap-4">{children}</div>;
+}
+
+type LinksProps = {
+  links: ExperienceType["links"];
+};
+
+function Links({ links }: LinksProps) {
+  if (!links || links.length === 0) return null;
+
   return (
-    <li className="pl-1.5">
-      <Typography.Paragraph className="inline text-sm" extraContrast>
-        {children}
-      </Typography.Paragraph>
-    </li>
+    <div className="flex gap-4">
+      {links.map((link) => (
+        <TextLink
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-1.5 text-sm"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <LinkIcon className="h-3 w-3 text-zinc-600 dark:text-zinc-400" />
+          {link.label}
+        </TextLink>
+      ))}
+    </div>
   );
 }
 
-function Footer({ children }: PropsWithChildren) {
-  return <div className="flex flex-wrap items-center gap-2">{children}</div>;
-}
+type StackProps = {
+  stack: ExperienceType["stack"];
+};
 
-function Stack({ children }: PropsWithChildren) {
+function Stack({ stack }: StackProps) {
+  if (!stack || stack.length === 0) return null;
+
   return (
-    <div className="rounded-full bg-zinc-200 px-4 py-1.5 text-xs dark:bg-zinc-800">
-      {children}
+    <div className="flex flex-wrap items-center gap-2">
+      {stack.map((tech) => (
+        <Badge key={tech}>{tech}</Badge>
+      ))}
     </div>
   );
 }
@@ -88,6 +139,8 @@ Experience.Logo = Logo;
 Experience.Header = Header;
 Experience.Summary = Summary;
 Experience.Content = Content;
-Experience.Item = Item;
+Experience.Description = Description;
+Experience.Responsibilities = Responsibilities;
 Experience.Footer = Footer;
+Experience.Links = Links;
 Experience.Stack = Stack;

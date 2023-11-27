@@ -40,19 +40,22 @@ export const recommendations: Recommendation[] = [
   },
 ];
 
-type Experience = {
+type ExperienceLink = {
+  label: string;
+  href: string;
+};
+
+export type Experience = {
   role: string;
   company: string;
   logo: string;
   site: string;
   start: string;
   end: string | null;
-  stack: string[];
-  responsibilities: string[];
-  links: {
-    label: string;
-    href: string;
-  }[];
+  stack: string[] | [];
+  description: string;
+  responsibilities: string[] | [];
+  links: ExperienceLink[] | [];
 };
 
 export const experience: Experience[] = [
@@ -72,12 +75,12 @@ export const experience: Experience[] = [
       "Storybook",
       "Jest & Testing Library",
     ],
+    description: `Tailwarden is a cloud infrastructure visibility product built on top of Komiser, our open source tool. As a Frontend engineer I:`,
     responsibilities: [
-      `Migrated Tailwarden & Komiser from Angular to React on CTO's request`,
-      `Defined the base architecture and new framework of choice (Next.js, Typescript & Tailwind)`,
-      `Implemented authentication with AWS Cognito/Amplify`,
-      `Collaborated with our product designers via design reviews and weekly meetings`,
-      `Actively developed core features (cloud inventory, tag management, filters, custom views, dashboard widgets, custom reports & more)`,
+      `Developed core features for Tailwarden: cloud inventory, tag management, filters, custom views, reporting widgets, and more.`,
+      `Improved our practices by documenting components on Storybook, writing unit tests for utils with Jest, and writing component tests with Testing Library.`,
+      `Actively participated in the hiring process of new engineers, helping with technical challenges assessment, interviewing, and onboarding.`,
+      `Helped maintain Komiser by migrating the old codebase from Angular to React. Wrote documentation for contributors to help with the frontend part. Implemented Storybook and testing.`,
     ],
     links: [
       { label: "Tailwarden", href: "https://tailwarden.com" },

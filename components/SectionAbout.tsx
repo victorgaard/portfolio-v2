@@ -31,7 +31,7 @@ function SectionAbout() {
         development to craft exceptional and technically robust products.
       </Typography.Paragraph>
       <Typography.Paragraph>
-        Outside of work, you will find me{" "}
+        Outside work, you will find me{" "}
         <TextLink
           href="https://victor.sawthat.band/?utm_source=victorsantoswork"
           className="decoration-sky-500"
@@ -40,7 +40,7 @@ function SectionAbout() {
         >
           at metal concerts
         </TextLink>
-        , hiking into the nature for{" "}
+        , hiking into nature for{" "}
         <TextLink
           href="https://www.instagram.com/hunter.graphy"
           className="decoration-emerald-500"
