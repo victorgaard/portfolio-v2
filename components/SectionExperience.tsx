@@ -8,7 +8,7 @@ function SectionExperience() {
   return (
     <Section id="experience" title="Experience 💻">
       {experience.map((exp) => (
-        <Experience key={exp.company} url={exp.site}>
+        <Experience key={exp.company} url={exp.url}>
           <Experience.Header>
             <Experience.Logo src={exp.logo} />
             <Experience.Summary

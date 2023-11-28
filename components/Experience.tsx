@@ -5,7 +5,7 @@ import { format, timeAgo } from "@utils/date";
 import { ArrowUpRightIcon, LinkIcon } from "@heroicons/react/24/outline";
 import Badge from "./Badge";
 import TextLink from "./TextLink";
-import { Experience as ExperienceType } from "@static/global";
+import { Experience as ExperienceType } from "@static/types";
 import { cn } from "@utils/cn";
 
 const ExperienceContext = createContext({
@@ -129,7 +129,7 @@ function Links({ links }: LinksProps) {
       {links.map((link) => (
         <TextLink
           key={link.label}
-          href={link.href}
+          href={link.url}
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-1.5 text-sm"

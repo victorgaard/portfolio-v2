@@ -1,19 +1,6 @@
-export const sections = [
-  "about",
-  "recommendations",
-  "experience",
-  "projects",
-  "open source",
-  "playground",
-];
+import { Experience, Recommendation } from "./types";
 
-type Recommendation = {
-  name: string;
-  picture: string;
-  title: string;
-  relationship: string;
-  message: string;
-};
+export const sections = ["about", "recommendations", "experience", "projects"];
 
 export const recommendations: Recommendation[] = [
   {
@@ -28,40 +15,16 @@ export const recommendations: Recommendation[] = [
     picture: "/picture/pedro.jpeg",
     title: "Senior Software Engineer Consultant",
     relationship: "Worked together at Gitshowcase, Timelinely & Peerfect",
-    message: `I had the privilege to have Victor as my co-founder on two projects, Gitshowcase and Peerfect, and to watch him grow as he transitions from design to software engineering.
-    
-    Victor's eagerness to build high-quality products is remarkable and shows in everything he creates. His experience as a designer has given him a critical skill that few people have - the knowledge of how web products get implemented and their limitations combined with the vision to know what the designer and the product team aim to achieve. That is an indispensable layer of intelligence that improves any team's chance of success.
-      
-    As a professional, Victor is very forthcoming - he's kind but will let you know if something is not working out as expected. The courage to tell the truth, even if it's not a popular opinion while being compassionate about the situation tremendously contributes to the conversation and helps drive the product forward meaningfully to customers and his team.
-  
-    I highly recommend Victor to anyone looking for a talented product engineer with a keen eye for top-notch products.`,
+    message: `I had the privilege to have Victor as my co-founder on two projects, Gitshowcase and Peerfect, and to watch him grow as he transitions from design to software engineering. Victor's eagerness to build high-quality products is remarkable and shows in everything he creates. His experience as a designer has given him a critical skill that few people have - the knowledge of how web products get implemented and their limitations combined with the vision to know what the designer and the product team aim to achieve. That is an indispensable layer of intelligence that improves any team's chance of success. As a professional, Victor is very forthcoming - he's kind but will let you know if something is not working out as expected. The courage to tell the truth, even if it's not a popular opinion while being compassionate about the situation tremendously contributes to the conversation and helps drive the product forward meaningfully to customers and his team. I highly recommend Victor to anyone looking for a talented product engineer with a keen eye for top-notch products.`,
   },
 ];
-
-type ExperienceLink = {
-  label: string;
-  href: string;
-};
-
-export type Experience = {
-  role: string;
-  company: string;
-  logo: string;
-  site: string;
-  start: string;
-  end: string | null;
-  stack: string[] | [];
-  description: string;
-  responsibilities: string[] | [];
-  links: ExperienceLink[] | [];
-};
 
 export const experience: Experience[] = [
   {
     role: "Frontend Engineer",
     company: "Tailwarden",
     logo: "/logo/tailwarden.svg",
-    site: "https://tailwarden.com",
+    url: "https://tailwarden.com",
     start: "2022-06-01",
     end: null,
     stack: [
@@ -81,25 +44,31 @@ export const experience: Experience[] = [
       `Helped maintain Komiser by migrating the old codebase from Angular to React. Wrote documentation for contributors to help with the frontend part. Implemented Storybook and testing.`,
     ],
     links: [
-      { label: "Tailwarden", href: "https://tailwarden.com" },
-      { label: "Komiser", href: "https://komiser.io" },
+      { label: "Tailwarden", url: "https://tailwarden.com" },
+      { label: "Komiser", url: "https://komiser.io" },
     ],
   },
   {
     role: "Product Designer",
     company: "Multiple companies",
     logo: "/logo/design-companies.png",
-    site: "",
+    url: "",
     start: "2015-03-01",
     end: "2022-03-01",
     stack: ["Figma", "Product Design", "UX Research"],
     description: `Before transitioning to a Frontend Engineer, I worked as an experienced product designer for multiple global companies, including: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
     responsibilities: [],
     links: [
-      { label: "Datadog", href: "https://datadoghq.com" },
-      { label: "Rasa", href: "https://rasa.com" },
-      { label: "Prezi", href: "https://prezi.com" },
-      { label: "Scalable Path", href: "https://scalablepath.com" },
+      { label: "Datadog", url: "https://datadoghq.com" },
+      { label: "Rasa", url: "https://rasa.com" },
+      { label: "Prezi", url: "https://prezi.com" },
+      { label: "Scalable Path", url: "https://scalablepath.com" },
     ],
+  },
+];
+
+export const projects = [
+  {
+    title: "",
   },
 ];
