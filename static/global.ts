@@ -62,7 +62,7 @@ export const experience: Experience[] = [
   {
     role: "Frontend Engineer",
     company: "Tailwarden",
-    logo: "logo/tailwarden.svg",
+    logo: "/logo/tailwarden.svg",
     site: "https://tailwarden.com",
     start: "2022-06-01",
     end: null,
@@ -85,6 +85,23 @@ export const experience: Experience[] = [
     links: [
       { label: "Tailwarden", href: "https://tailwarden.com" },
       { label: "Komiser", href: "https://komiser.io" },
+    ],
+  },
+  {
+    role: "Product Designer",
+    company: "Multiple companies",
+    logo: "/logo/design-companies.png",
+    site: "",
+    start: "2015-03-01",
+    end: "2022-03-01",
+    stack: ["Figma", "Sketch", "Zeplin", "UX", "UI", "UX Research"],
+    description: `Before transitioning to a Frontend Engineer, I was an Experienced Product Designer working closely with end users and product teams in all kinds of setups: startups, scaleups, enterprises, agencies and consulting. Companies include: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
+    responsibilities: [],
+    links: [
+      { label: "Datadog", href: "https://datadoghq.com" },
+      { label: "Rasa", href: "https://rasa.com" },
+      { label: "Prezi", href: "https://prezi.com" },
+      { label: "Scalable Path", href: "https://scalablepath.com" },
     ],
   },
 ];

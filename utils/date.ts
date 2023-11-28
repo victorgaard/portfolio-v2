@@ -5,10 +5,10 @@ export function format(date: Date) {
   }).format(date);
 }
 
-export function timeAgo(date: Date) {
-  const currentDate = new Date();
-  const yearDiff = currentDate.getFullYear() - date.getFullYear();
-  const monthDiff = currentDate.getMonth() - (date.getMonth() - 1);
+export function timeAgo(start: Date, end: Date | null) {
+  const endDate = end || new Date();
+  const yearDiff = endDate.getFullYear() - start.getFullYear();
+  const monthDiff = endDate.getMonth() - (start.getMonth());
 
   let result = "";
 

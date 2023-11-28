@@ -8,7 +8,7 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 type RecommendationProps = PropsWithChildren & { id: number };
 export function Recommendation({ children, id }: RecommendationProps) {
   return (
-    <div id={`recommendation-${id}`} className="flex flex-col gap-3">
+    <div id={`recommendation-${id}`} className="group flex flex-col gap-3">
       {children}
     </div>
   );
@@ -53,16 +53,19 @@ function Message({ children, id }: MessageProps) {
   return (
     <div className="flex flex-col gap-2">
       <Typography.Paragraph
-        className={cn("line-clamp-4", {
-          "line-clamp-none": isExpanded,
-        })}
+        className={cn(
+          "line-clamp-4 transition-all group-hover:text-inherit group-hover:dark:text-inherit",
+          {
+            "line-clamp-none": isExpanded,
+          },
+        )}
       >
         &ldquo;{children}&rdquo;
       </Typography.Paragraph>
       <TextLink
         href={`#recommendation-${id}`}
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 mr-auto"
+        className="mr-auto flex items-center gap-2"
       >
         {isExpanded ? (
           <>

@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, createContext, useContext } from "react";
 import { Typography } from "@components/Typography";
 import Image from "next/image";
 import { format, timeAgo } from "@utils/date";
@@ -6,21 +6,36 @@ import { ArrowUpRightIcon, LinkIcon } from "@heroicons/react/24/outline";
 import Badge from "./Badge";
 import TextLink from "./TextLink";
 import { Experience as ExperienceType } from "@static/global";
+import { cn } from "@utils/cn";
+
+const ExperienceContext = createContext({
+  url: "",
+});
 
 type ExperienceProps = PropsWithChildren & {
   url: string;
 };
 export function Experience({ children, url }: ExperienceProps) {
   return (
-    <div
-      onClick={() => window.open(url, "_blank")}
-      className="group relative -mx-4 flex cursor-pointer flex-col gap-5 rounded-lg border-t border-transparent p-4 transition-all hover:border-zinc-200 hover:bg-zinc-100 hover:dark:border-zinc-800 hover:dark:bg-zinc-900"
-    >
-      {children}
-      <div className="absolute right-6 top-6 hidden group-hover:block">
-        <ArrowUpRightIcon className="h-5 w-5 animate-fade-in-up" />
+    <ExperienceContext.Provider value={{ url }}>
+      <div
+        onClick={url ? () => window.open(url, "_blank") : undefined}
+        className={cn(
+          "group relative -mx-4 flex flex-col gap-3 rounded-lg border-t border-transparent p-4 transition-all",
+          {
+            "cursor-pointer hover:bg-zinc-200/50 hover:dark:border-zinc-800 hover:dark:bg-zinc-900":
+              url,
+          },
+        )}
+      >
+        {children}
+        {url && (
+          <div className="absolute right-6 top-6 hidden group-hover:block">
+            <ArrowUpRightIcon className="h-5 w-5 animate-fade-in-up text-zinc-600 dark:text-zinc-400" />
+          </div>
+        )}
       </div>
-    </div>
+    </ExperienceContext.Provider>
   );
 }
 
@@ -48,16 +63,19 @@ type SummaryProps = {
 };
 
 function Summary({ role, company, start, end }: SummaryProps) {
-  const startDate = format(new Date(start));
-  const endDate = end ? format(new Date(end)) : "present";
-  const time = timeAgo(new Date(start));
+  const startDate = new Date(start);
+  const endDate = end ? new Date(end) : null;
+  const formattedStartDate = format(startDate);
+  const formattedEndDate = endDate ? format(endDate) : "present";
+  const time = timeAgo(startDate, endDate);
+
   return (
     <div className="flex flex-col">
       <Typography.Paragraph className="font-semibold" extraContrast>
         {role} at {company}
       </Typography.Paragraph>
       <Typography.Paragraph className="text-xs font-semibold uppercase">
-        {startDate} — {endDate} · {time}
+        {formattedStartDate} — {formattedEndDate} · {time}
       </Typography.Paragraph>
     </div>
   );
@@ -76,6 +94,8 @@ type ResponsibilitiesProps = {
 };
 
 function Responsibilities({ responsibilities }: ResponsibilitiesProps) {
+  if (!responsibilities || responsibilities.length === 0) return null;
+
   return (
     <ul className="ml-3 list-disc marker:text-zinc-200 dark:marker:text-zinc-700">
       {responsibilities.map((responsibility) => (
@@ -90,7 +110,7 @@ function Responsibilities({ responsibilities }: ResponsibilitiesProps) {
 }
 
 function Footer({ children }: PropsWithChildren) {
-  return <div className="flex flex-col gap-4">{children}</div>;
+  return <div className="flex flex-col gap-4 pt-2">{children}</div>;
 }
 
 type LinksProps = {
@@ -124,12 +144,22 @@ type StackProps = {
 };
 
 function Stack({ stack }: StackProps) {
+  const { url } = useContext(ExperienceContext);
+
   if (!stack || stack.length === 0) return null;
 
   return (
     <div className="flex flex-wrap items-center gap-2">
       {stack.map((tech) => (
-        <Badge key={tech}>{tech}</Badge>
+        <Badge
+          key={tech}
+          className={cn("text-zinc-700", {
+            "group-hover:bg-zinc-300 dark:text-zinc-300 group-hover:dark:bg-zinc-800 group-hover:dark:text-white":
+              url,
+          })}
+        >
+          {tech}
+        </Badge>
       ))}
     </div>
   );
