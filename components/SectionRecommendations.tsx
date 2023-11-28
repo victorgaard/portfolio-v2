@@ -6,7 +6,7 @@ import { Recommendation } from "@components/Recommendation";
 
 function SectionRecommendations() {
   return (
-    <Section id="recommendations" title="Worked together 💪" className="gap-12">
+    <Section id="recommendations" title="Worked together 💪" className="gap-0">
       {recommendations.map((recommendation, idx) => {
         const id = idx + 1;
         return (

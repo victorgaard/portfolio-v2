@@ -86,7 +86,11 @@ function Content({ children }: PropsWithChildren) {
 }
 
 function Description({ children }: PropsWithChildren) {
-  return <Typography.Paragraph>{children}</Typography.Paragraph>;
+  return (
+    <Typography.Paragraph className="[text-wrap:balance]">
+      {children}
+    </Typography.Paragraph>
+  );
 }
 
 type ResponsibilitiesProps = {
@@ -153,8 +157,8 @@ function Stack({ stack }: StackProps) {
       {stack.map((tech) => (
         <Badge
           key={tech}
-          className={cn("text-zinc-700", {
-            "group-hover:bg-zinc-300 dark:text-zinc-300 group-hover:dark:bg-zinc-800 group-hover:dark:text-white":
+          className={cn("text-zinc-700 dark:text-zinc-300", {
+            "group-hover:bg-zinc-300 group-hover:dark:bg-zinc-800 group-hover:dark:text-white":
               url,
           })}
         >

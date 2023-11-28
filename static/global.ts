@@ -21,9 +21,7 @@ export const recommendations: Recommendation[] = [
     picture: "/picture/enes.jpeg",
     title: "Software Engineer @ Spotify",
     relationship: "Worked together at Tailwarden",
-    message: `Victor is super quick to understand new concepts, and it was a real pleasure working with him on new features and introducing new tools and libraries to make our Frontend more sophisticated. He is open to new ideas and improvements, and thinks critically about new features. His product design background is a super-power when it comes to Frontend development, because he constantly thinks about the UX and the big picture of the whole product. I got to know him as a very pro-active engineer, eager to learn and seeking feedback from his peers. In short, if you're in need of a skilled frontend engineer, you can't go wrong with Victor :) 
-    
-    Wishing you all the best and hopefully our roads cross again at some point!`,
+    message: `Victor is super quick to understand new concepts, and it was a real pleasure working with him on new features and introducing new tools and libraries to make our Frontend more sophisticated. He is open to new ideas and improvements, and thinks critically about new features. His product design background is a super-power when it comes to Frontend development, because he constantly thinks about the UX and the big picture of the whole product. I got to know him as a very pro-active engineer, eager to learn and seeking feedback from his peers. In short, if you're in need of a skilled frontend engineer, you can't go wrong with Victor :)`,
   },
   {
     name: "Pedro Moreira",
@@ -94,8 +92,8 @@ export const experience: Experience[] = [
     site: "",
     start: "2015-03-01",
     end: "2022-03-01",
-    stack: ["Figma", "Sketch", "Zeplin", "UX", "UI", "UX Research"],
-    description: `Before transitioning to a Frontend Engineer, I was an Experienced Product Designer working closely with end users and product teams in all kinds of setups: startups, scaleups, enterprises, agencies and consulting. Companies include: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
+    stack: ["Figma", "Product Design", "UX Research"],
+    description: `Before transitioning to a Frontend Engineer, I worked as an experienced product designer for multiple global companies, including: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
     responsibilities: [],
     links: [
       { label: "Datadog", href: "https://datadoghq.com" },

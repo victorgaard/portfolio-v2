@@ -8,7 +8,10 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 type RecommendationProps = PropsWithChildren & { id: number };
 export function Recommendation({ children, id }: RecommendationProps) {
   return (
-    <div id={`recommendation-${id}`} className="group flex flex-col gap-3">
+    <div
+      id={`recommendation-${id}`}
+      className="group flex flex-col gap-3 pt-12"
+    >
       {children}
     </div>
   );
@@ -51,21 +54,24 @@ type MessageProps = PropsWithChildren & { id: number };
 function Message({ children, id }: MessageProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <div className="flex flex-col gap-2">
-      <Typography.Paragraph
-        className={cn(
-          "line-clamp-4 transition-all group-hover:text-inherit group-hover:dark:text-inherit",
-          {
-            "line-clamp-none": isExpanded,
-          },
-        )}
-      >
-        &ldquo;{children}&rdquo;
-      </Typography.Paragraph>
+    <div className="group flex flex-col gap-2">
+      <a href={`#recommendation-${id}`} className="cursor-text">
+        <Typography.Paragraph
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={cn(
+            "line-clamp-4 transition-all group-hover:text-inherit group-hover:dark:text-inherit",
+            {
+              "line-clamp-none": isExpanded,
+            },
+          )}
+        >
+          &ldquo;{children}&rdquo;
+        </Typography.Paragraph>
+      </a>
       <TextLink
         href={`#recommendation-${id}`}
         onClick={() => setIsExpanded(!isExpanded)}
-        className="mr-auto flex items-center gap-2"
+        className="flex items-center gap-2 decoration-2 group-hover:underline group-hover:underline-offset-4"
       >
         {isExpanded ? (
           <>
