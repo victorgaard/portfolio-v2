@@ -10,7 +10,7 @@ function Summary() {
         Frontend Engineer
       </Typography.H5>
       <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-        Bridging the gap between UX and Frontend engineering
+        Bridging the gap between UX and Frontend engineering.
       </Typography.Paragraph>
     </div>
   );

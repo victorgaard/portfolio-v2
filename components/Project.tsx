@@ -85,11 +85,11 @@ function Link({ link, repo }: { link: TLink; repo: Project["github_repo"] }) {
   }, [link.type, repo]);
 
   const linksIconMap: Record<LinkType, ReactNode> = {
-    github: <GithubIcon className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />,
-    link: <LinkIcon className="h-3 w-3 text-zinc-600 dark:text-zinc-400" />,
-    star: <StarIcon className="h-3.5 w-3.5 text-zinc-600 dark:text-zinc-400" />,
+    github: <GithubIcon className="h-4 w-4 text-zinc-600 dark:text-zinc-400 shrink-0" />,
+    link: <LinkIcon className="h-3 w-3 text-zinc-600 dark:text-zinc-400 shrink-0" />,
+    star: <StarIcon className="h-3.5 w-3.5 text-zinc-600 dark:text-zinc-400 shrink-0" />,
     productHunt: (
-      <ProductHuntIcon className="h-3.5 w-3.5 text-zinc-600 dark:text-zinc-400" />
+      <ProductHuntIcon className="h-3.5 w-3.5 text-zinc-600 dark:text-zinc-400 shrink-0" />
     ),
   };
 
@@ -97,8 +97,6 @@ function Link({ link, repo }: { link: TLink; repo: Project["github_repo"] }) {
     <TextLink
       key={link.label}
       href={link.url}
-      target="_blank"
-      rel="noreferrer"
       className="flex items-center gap-1.5 text-sm"
       onClick={(e) => e.stopPropagation()}
     >
@@ -118,7 +116,7 @@ function Links({
   if (!links || links.length === 0) return null;
 
   return (
-    <div className="flex gap-4">
+    <div className="gap-4 hidden lg:flex">
       {links.map((link) => (
         <Link key={link.label} link={link} repo={repo} />
       ))}

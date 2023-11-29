@@ -104,8 +104,6 @@ function Links({ links }: LinksProps) {
         <TextLink
           key={link.label}
           href={link.url}
-          target="_blank"
-          rel="noreferrer"
           className="flex items-center gap-1.5 text-sm"
           onClick={(e) => e.stopPropagation()}
         >

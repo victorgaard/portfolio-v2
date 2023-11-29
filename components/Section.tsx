@@ -13,7 +13,7 @@ function Section({ children, id, title, className }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "flex w-full flex-col gap-6 pt-8 md:pt-20 md:pb-8",
+        "flex w-full flex-col gap-6 first-of-type:pt-8 first-of-type:lg:pt-20 pt-20 lg:pb-8",
         className,
       )}
     >

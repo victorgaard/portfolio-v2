@@ -10,16 +10,10 @@ function SectionSummary() {
       </Typography.Paragraph>
       <Typography.Paragraph>
         I currently work at{" "}
-        <TextLink
-          href="https://tailwarden.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Tailwarden
-        </TextLink>
-        , where I ship core features with my team using Next.js, React, and
-        Typescript to help companies have more visibility into costs and usage
-        from their cloud infrastructure.
+        <TextLink href="https://tailwarden.com">Tailwarden</TextLink>, where I
+        ship core features with my team using Next.js, React, and Typescript to
+        help companies have more visibility into costs and usage from their
+        cloud infrastructure.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Before that, I was an experienced product designer working closely with
@@ -35,8 +29,6 @@ function SectionSummary() {
         <TextLink
           href="https://victor.sawthat.band/?utm_source=victorsantoswork"
           className="decoration-sky-500"
-          target="_blank"
-          rel="noreferrer"
         >
           at metal concerts
         </TextLink>
@@ -44,8 +36,6 @@ function SectionSummary() {
         <TextLink
           href="https://www.instagram.com/hunter.graphy"
           className="decoration-emerald-500"
-          target="_blank"
-          rel="noreferrer"
         >
           landscape photography
         </TextLink>

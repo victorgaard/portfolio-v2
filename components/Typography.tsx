@@ -104,6 +104,17 @@ function Paragraph({
   );
 }
 
+function Small({ children, className, ...rest }: HTMLAttributes<HTMLElement>) {
+  return (
+    <small
+      className="flex items-center gap-2 text-xs font-semibold uppercase text-zinc-600 dark:text-zinc-400"
+      {...rest}
+    >
+      {children}
+    </small>
+  );
+}
+
 Typography.H1 = H1;
 Typography.H2 = H2;
 Typography.H3 = H3;
@@ -111,3 +122,4 @@ Typography.H4 = H4;
 Typography.H5 = H5;
 Typography.H6 = H6;
 Typography.Paragraph = Paragraph;
+Typography.Small = Small;

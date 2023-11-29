@@ -29,7 +29,7 @@ function NavbarItem({
 function Navbar() {
   const activeId = useScrollSpy(sections, 300) || "summary";
   return (
-    <nav className="mr-auto hidden w-48 md:block">
+    <nav className="mr-auto hidden w-48 lg:block">
       <ul className="flex flex-col gap-1">
         {sections.map((id) => {
           const isActive = id === activeId;

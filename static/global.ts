@@ -88,17 +88,17 @@ export const projects: Project[] = [
     links: [
       {
         type: "link",
-        label: "Example",
+        label: "Live",
         url: "https://victor.sawthat.band/",
       },
       {
         type: "github",
-        label: "Profile repo",
+        label: "Profile GitHub",
         url: "https://github.com/victorgaard/saw-that-band",
       },
       {
         type: "github",
-        label: "App repo",
+        label: "App GitHub",
         url: "https://github.com/victorgaard/saw-that-band-app",
       },
     ],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
       },
       {
         type: "github",
-        label: "Repo",
+        label: "GitHub",
         url: "https://github.com/gitshowcase/gitshowcase",
       },
       {

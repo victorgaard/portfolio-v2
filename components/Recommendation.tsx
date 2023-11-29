@@ -68,6 +68,7 @@ function Message({ children, id }: MessageProps) {
       </a>
       <TextLink
         href={`#recommendation-${id}`}
+        target="_self"
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex items-center gap-2 decoration-2 group-hover:underline group-hover:underline-offset-4"
       >
