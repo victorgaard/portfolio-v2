@@ -17,7 +17,7 @@ export default function Home() {
           </div>
           <Footer />
         </aside>
-        <div>
+        <div className="pb-24">
           <SectionAbout />
           <SectionRecommendations />
           <SectionExperience />

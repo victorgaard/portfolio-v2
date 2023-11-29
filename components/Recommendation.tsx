@@ -59,9 +59,9 @@ function Message({ children, id }: MessageProps) {
         <Typography.Paragraph
           onClick={() => setIsExpanded(!isExpanded)}
           className={cn(
-            "line-clamp-4 transition-all group-hover:text-inherit group-hover:dark:text-inherit",
+            "line-clamp-4",
             {
-              "line-clamp-none": isExpanded,
+              "line-clamp-none text-zinc-700 dark:text-zinc-300": isExpanded,
             },
           )}
         >

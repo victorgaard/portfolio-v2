@@ -87,7 +87,7 @@ function Content({ children }: PropsWithChildren) {
 
 function Description({ children }: PropsWithChildren) {
   return (
-    <Typography.Paragraph className="[text-wrap:balance]">
+    <Typography.Paragraph className="text-sm">
       {children}
     </Typography.Paragraph>
   );

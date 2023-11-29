@@ -6,11 +6,15 @@ export type Recommendation = {
   message: string;
 };
 
+export type LinkType = "link" | "github" | "star";
+
 export type Link = {
   label: string;
   url: string;
-  type: string;
+  type: LinkType;
 };
+
+export type Stack = string[] | [];
 
 export type Experience = {
   role: string;
@@ -19,7 +23,7 @@ export type Experience = {
   url: string;
   start: string;
   end: string | null;
-  stack: string[] | [];
+  stack: Stack;
   description: string;
   responsibilities: string[] | [];
   links: Omit<Link, "type">[] | [];
@@ -28,7 +32,9 @@ export type Experience = {
 export type Project = {
   title: string;
   description: string;
-  stack: string[] | [];
+  picture: string;
+  stack: Stack;
+  github_repo?: string;
   url: string;
   links: Link[];
 };

@@ -4,7 +4,10 @@ import { Typography } from "@components/Typography";
 
 function SectionAbout() {
   return (
-    <Section id="about" title="Hey, I'm Victor 👋">
+    <Section id="about" title="👋 about();">
+      <Typography.Paragraph>
+        Hey, I&apos;m Victor.
+      </Typography.Paragraph>
       <Typography.Paragraph>
         I&apos;m a frontend engineer, optimistic nihilist and lifelong learner.
       </Typography.Paragraph>
