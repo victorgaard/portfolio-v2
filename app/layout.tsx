@@ -1,3 +1,4 @@
+import Favicon from "/public/metadata/favicon.ico";
 import "@styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -24,10 +25,12 @@ export const metadata: Metadata = {
     images: "/metadata/thumbnail.png",
     type: "website",
   },
-  icons: {
-    icon: "/metadata/icon.png",
-    apple: "/metadata/apple-touch-icon.png",
-  },
+  icons: [
+    {
+      rel: "icon",
+      url: Favicon.src,
+    },
+  ],
 };
 
 export default function RootLayout({
