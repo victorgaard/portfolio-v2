@@ -27,7 +27,7 @@ function NavbarItem({
 }
 
 function Navbar() {
-  const activeId = useScrollSpy(sections, 300) || "about";
+  const activeId = useScrollSpy(sections, 300) || "summary";
   return (
     <nav className="mr-auto hidden w-48 md:block">
       <ul className="flex flex-col gap-1">

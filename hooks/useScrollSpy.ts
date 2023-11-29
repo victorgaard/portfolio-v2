@@ -8,7 +8,7 @@ function isBetween(value: number, floor: number, ceil: number) {
   return value >= floor && value <= ceil;
 }
 
-function useScrollSpy(ids: string[], offset: number = 0) {
+function useScrollSpy(ids: readonly string[], offset: number = 0) {
   const [activeId, setActiveId] = useState("");
 
   useLayoutEffect(() => {

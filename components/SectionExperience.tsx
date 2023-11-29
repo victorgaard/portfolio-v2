@@ -6,7 +6,7 @@ import { Experience } from "@components/Experience";
 
 function SectionExperience() {
   return (
-    <Section id="experience" title="💻 experience();">
+    <Section id="experience">
       {experience.map((exp) => (
         <Experience key={exp.company}>
           <Experience.Header>

@@ -6,7 +6,7 @@ import { Project } from "./Project";
 
 function SectionProjects() {
   return (
-    <Section id="projects" title="🚀 sideProjects();">
+    <Section id="projects">
       {projects.map((project) => (
         <Project key={project.title} url={project.url}>
           <Project.Main>

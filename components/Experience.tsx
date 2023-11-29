@@ -1,14 +1,15 @@
+import Image from "next/image";
+import Badge from "@components/Badge";
+import TextLink from "@components/TextLink";
 import { PropsWithChildren } from "react";
 import { Typography } from "@components/Typography";
-import Image from "next/image";
 import { format, timeAgo } from "@utils/date";
 import { LinkIcon } from "@heroicons/react/24/outline";
-import Badge from "./Badge";
-import TextLink from "./TextLink";
 import { Experience, Experience as ExperienceType } from "@static/types";
+
 export function Experience({ children }: PropsWithChildren) {
   return (
-    <div className="group relative -mx-4 flex flex-col gap-3 rounded-lg border-t border-transparent p-4 transition-all">
+    <div className="group relative mt-8 flex flex-col gap-4 rounded-lg border-t border-transparent transition-all first-of-type:mt-0">
       {children}
     </div>
   );
@@ -45,7 +46,7 @@ function Summary({ role, company, start, end }: SummaryProps) {
   const time = timeAgo(startDate, endDate);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-0.5">
       <Typography.Paragraph className="font-semibold" extraContrast>
         {role} at {company}
       </Typography.Paragraph>
@@ -76,7 +77,7 @@ function Responsibilities({ responsibilities }: ResponsibilitiesProps) {
   return (
     <ul className="ml-3 list-disc marker:text-zinc-200 dark:marker:text-zinc-700">
       {responsibilities.map((responsibility) => (
-        <li className="pl-1.5" key={responsibility}>
+        <li className="pl-1.5 pt-1" key={responsibility}>
           <Typography.Paragraph className="inline text-sm" extraContrast>
             {responsibility}
           </Typography.Paragraph>
@@ -87,7 +88,7 @@ function Responsibilities({ responsibilities }: ResponsibilitiesProps) {
 }
 
 function Footer({ children }: PropsWithChildren) {
-  return <div className="flex flex-col gap-4 pt-2">{children}</div>;
+  return <div className="flex flex-col gap-4 pt-1">{children}</div>;
 }
 
 type LinksProps = {

@@ -11,7 +11,7 @@ export function Recommendation({ children, id }: RecommendationProps) {
   return (
     <div
       id={`recommendation-${id}`}
-      className="group flex flex-col gap-3 pt-12"
+      className="group flex flex-col gap-3 pt-12 first-of-type:pt-6"
     >
       {children}
     </div>

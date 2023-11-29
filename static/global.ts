@@ -1,6 +1,11 @@
 import { Experience, Project, Recommendation } from "./types";
 
-export const sections = ["about", "recommendations", "experience", "projects"] as const;
+export const sections = [
+  "summary",
+  "recommendations",
+  "experience",
+  "projects",
+] as const;
 
 export const recommendations: Recommendation[] = [
   {
@@ -46,6 +51,10 @@ export const experience: Experience[] = [
     ],
     links: [
       { label: "Tailwarden", url: "https://tailwarden.com" },
+      {
+        label: "Storybook",
+        url: "https://storybook.tailwarden.com/?path=/docs/v2-cloudaccountcard--docs",
+      },
       { label: "Komiser", url: "https://komiser.io" },
     ],
   },
@@ -120,7 +129,7 @@ export const projects: Project[] = [
       },
       {
         type: "productHunt",
-        label: "4th PotD",
+        label: "4th of the day",
         url: "https://www.producthunt.com/products/git-showcase#gitshowcase",
       },
     ],

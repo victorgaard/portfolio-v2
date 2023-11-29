@@ -8,7 +8,6 @@ function SectionRecommendations() {
   return (
     <Section
       id="recommendations"
-      title="💪 workedTogether();"
       className="gap-0"
     >
       {recommendations.map((recommendation, idx) => {

@@ -2,9 +2,9 @@ import Summary from "@components/Summary";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import SectionRecommendations from "@components/SectionRecommendations";
-import SectionAbout from "@components/SectionAbout";
 import SectionExperience from "@components/SectionExperience";
 import SectionProjects from "@components/SectionProjects";
+import SectionSummary from "@components/SectionAbout";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           <Footer />
         </aside>
         <div className="pb-24">
-          <SectionAbout />
+          <SectionSummary />
           <SectionRecommendations />
           <SectionExperience />
           <SectionProjects />

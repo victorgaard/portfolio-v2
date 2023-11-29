@@ -4,13 +4,13 @@ function Summary() {
   return (
     <div className="flex flex-col gap-1.5">
       <Typography.H2 className="font-bold tracking-tight">
-        Victor F. Santos
+       Victor F. Santos
       </Typography.H2>
       <Typography.H5 className="font-medium tracking-tight">
         Frontend Engineer
       </Typography.H5>
       <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-        victorSantos();
+        Bridging the gap between UX and Frontend engineering
       </Typography.Paragraph>
     </div>
   );

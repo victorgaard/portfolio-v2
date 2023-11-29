@@ -2,12 +2,9 @@ import Section from "@components/Section";
 import TextLink from "@components/TextLink";
 import { Typography } from "@components/Typography";
 
-function SectionAbout() {
+function SectionSummary() {
   return (
-    <Section id="about" title="👋 about();">
-      <Typography.Paragraph>
-        Hey, I&apos;m Victor.
-      </Typography.Paragraph>
+    <Section id="summary" title="👋 Hey, I'm Victor">
       <Typography.Paragraph>
         I&apos;m a frontend engineer, optimistic nihilist and lifelong learner.
       </Typography.Paragraph>
@@ -58,4 +55,4 @@ function SectionAbout() {
   );
 }
 
-export default SectionAbout;
+export default SectionSummary;
