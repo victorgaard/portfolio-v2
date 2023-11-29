@@ -6,8 +6,28 @@ import { ThemeProvider } from "@providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://victorsantos.work"),
   title: "Victor F. Santos",
-  description: "Frontend Engineer",
+  applicationName: "Victor F. Santos - Frontend Engineer",
+  description: "Bridging the gap between UX and Frontend engineering.",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Victor F. Santos",
+    "Victor Frontend",
+    "Victor React",
+    "Victor Next.js",
+    "frontend engineer",
+    "frontend developer",
+    "frontend",
+  ],
+  openGraph: {
+    images: "/metadata/thumbnail.png",
+    type: "website",
+  },
+  icons: {
+    icon: "/metadata/icon.png",
+    apple: "/metadata/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
