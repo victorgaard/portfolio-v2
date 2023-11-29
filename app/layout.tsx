@@ -24,10 +24,6 @@ export const metadata: Metadata = {
     images: "/metadata/thumbnail.png",
     type: "website",
   },
-  icons: {
-    icon: "/metadata/icon.png",
-    apple: "/metadata/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
