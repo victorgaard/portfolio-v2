@@ -6,7 +6,7 @@ export type Recommendation = {
   message: string;
 };
 
-export type LinkType = "link" | "github" | "star";
+export type LinkType = "link" | "github" | "star" | "productHunt";
 
 export type Link = {
   label: string;

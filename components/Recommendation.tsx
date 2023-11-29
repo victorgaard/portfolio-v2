@@ -4,6 +4,7 @@ import { PropsWithChildren, useState } from "react";
 import { Typography } from "@components/Typography";
 import TextLink from "./TextLink";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { Recommendation } from "@static/types";
 
 type RecommendationProps = PropsWithChildren & { id: number };
 export function Recommendation({ children, id }: RecommendationProps) {
@@ -18,10 +19,10 @@ export function Recommendation({ children, id }: RecommendationProps) {
 }
 
 type HeaderProps = {
-  name: string;
-  title: string;
-  picture: string;
-  relationship: string;
+  name: Recommendation["name"];
+  title: Recommendation["title"];
+  picture: Recommendation["picture"];
+  relationship: Recommendation["relationship"];
 };
 
 function Header({ name, title, picture, relationship }: HeaderProps) {
@@ -58,12 +59,9 @@ function Message({ children, id }: MessageProps) {
       <a href={`#recommendation-${id}`} className="cursor-text">
         <Typography.Paragraph
           onClick={() => setIsExpanded(!isExpanded)}
-          className={cn(
-            "line-clamp-4",
-            {
-              "line-clamp-none text-zinc-700 dark:text-zinc-300": isExpanded,
-            },
-          )}
+          className={cn("line-clamp-4", {
+            "line-clamp-none text-zinc-700 dark:text-zinc-300": isExpanded,
+          })}
         >
           &ldquo;{children}&rdquo;
         </Typography.Paragraph>

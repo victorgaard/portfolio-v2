@@ -1,41 +1,16 @@
-import { PropsWithChildren, createContext, useContext } from "react";
+import { PropsWithChildren } from "react";
 import { Typography } from "@components/Typography";
 import Image from "next/image";
 import { format, timeAgo } from "@utils/date";
-import { ArrowUpRightIcon, LinkIcon } from "@heroicons/react/24/outline";
+import { LinkIcon } from "@heroicons/react/24/outline";
 import Badge from "./Badge";
 import TextLink from "./TextLink";
-import { Experience as ExperienceType } from "@static/types";
-import { cn } from "@utils/cn";
-
-const ExperienceContext = createContext({
-  url: "",
-});
-
-type ExperienceProps = PropsWithChildren & {
-  url: string;
-};
-export function Experience({ children, url }: ExperienceProps) {
+import { Experience, Experience as ExperienceType } from "@static/types";
+export function Experience({ children }: PropsWithChildren) {
   return (
-    <ExperienceContext.Provider value={{ url }}>
-      <div
-        onClick={url ? () => window.open(url, "_blank") : undefined}
-        className={cn(
-          "group relative -mx-4 flex flex-col gap-3 rounded-lg border-t border-transparent p-4 transition-all",
-          {
-            "cursor-pointer hover:bg-zinc-200/50 hover:dark:border-zinc-800 hover:dark:bg-zinc-900":
-              url,
-          },
-        )}
-      >
-        {children}
-        {url && (
-          <div className="absolute right-6 top-6 hidden group-hover:block">
-            <ArrowUpRightIcon className="h-5 w-5 animate-fade-in-up text-zinc-600 dark:text-zinc-400" />
-          </div>
-        )}
-      </div>
-    </ExperienceContext.Provider>
+    <div className="group relative -mx-4 flex flex-col gap-3 rounded-lg border-t border-transparent p-4 transition-all">
+      {children}
+    </div>
   );
 }
 
@@ -43,7 +18,7 @@ function Header({ children }: PropsWithChildren) {
   return <div className="flex items-center gap-4">{children}</div>;
 }
 
-function Logo({ src }: { src: string }) {
+function Logo({ src }: { src: Experience["logo"] }) {
   return (
     <Image
       src={src}
@@ -56,10 +31,10 @@ function Logo({ src }: { src: string }) {
 }
 
 type SummaryProps = {
-  role: string;
-  company: string;
-  start: string;
-  end: string | null;
+  role: Experience["role"];
+  company: Experience["company"];
+  start: Experience["start"];
+  end: Experience["end"];
 };
 
 function Summary({ role, company, start, end }: SummaryProps) {
@@ -87,9 +62,7 @@ function Content({ children }: PropsWithChildren) {
 
 function Description({ children }: PropsWithChildren) {
   return (
-    <Typography.Paragraph className="text-sm">
-      {children}
-    </Typography.Paragraph>
+    <Typography.Paragraph className="text-sm">{children}</Typography.Paragraph>
   );
 }
 
@@ -148,20 +121,12 @@ type StackProps = {
 };
 
 function Stack({ stack }: StackProps) {
-  const { url } = useContext(ExperienceContext);
-
   if (!stack || stack.length === 0) return null;
 
   return (
     <div className="flex flex-wrap items-center gap-2">
       {stack.map((tech) => (
-        <Badge
-          key={tech}
-          className={cn("text-zinc-700 dark:text-zinc-300", {
-            "group-hover:bg-zinc-300 group-hover:dark:bg-zinc-800 group-hover:dark:text-white":
-              url,
-          })}
-        >
+        <Badge key={tech} className="text-zinc-700 dark:text-zinc-300">
           {tech}
         </Badge>
       ))}

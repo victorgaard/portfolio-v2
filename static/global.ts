@@ -1,6 +1,6 @@
 import { Experience, Project, Recommendation } from "./types";
 
-export const sections = ["about", "recommendations", "experience", "projects"];
+export const sections = ["about", "recommendations", "experience", "projects"] as const;
 
 export const recommendations: Recommendation[] = [
   {
@@ -35,13 +35,14 @@ export const experience: Experience[] = [
       "React Query",
       "Storybook",
       "Jest & Testing Library",
+      "Open source",
     ],
     description: `Tailwarden is a cloud infrastructure visibility product built on top of Komiser, our open source tool. As a Frontend engineer I:`,
     responsibilities: [
       `Developed core features for Tailwarden: cloud inventory, tag management, filters, custom views, reporting widgets, and more.`,
       `Improved our practices by documenting components on Storybook, writing unit tests for utils with Jest, and writing component tests with Testing Library.`,
       `Actively participated in the hiring process of new engineers, helping with technical challenges assessment, interviewing, and onboarding.`,
-      `Helped maintain Komiser by migrating the old codebase from Angular to React. Wrote documentation for contributors to help with the frontend part. Implemented Storybook and testing.`,
+      `Migrated Komiser from Angular to React, added base features and wrote documentation for contributors.`,
     ],
     links: [
       { label: "Tailwarden", url: "https://tailwarden.com" },
@@ -56,7 +57,7 @@ export const experience: Experience[] = [
     start: "2015-03-01",
     end: "2022-03-01",
     stack: ["Figma", "Product Design", "UX Research"],
-    description: `Before transitioning to a Frontend Engineer, I worked as an experienced product designer for multiple global companies, including: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
+    description: `Before transitioning to a Frontend Engineer, I worked as an experienced product designer for multiple global companies including: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
     responsibilities: [],
     links: [
       { label: "Datadog", url: "https://datadoghq.com" },
@@ -96,16 +97,16 @@ export const projects: Project[] = [
   {
     title: "Gitshowcase",
     description:
-      "Open source plug-and-play portfolio from GitHub profile. I co-created it as a designer and CSS wizard. Released in 2017 and still getting new users.",
-    picture: "/project-picture/saw-that-band-thumb.jpg",
-    stack: [],
+      "Open source plug-and-play portfolio from GitHub profile. I co-created it as a designer and CSS helper. Released in 2017 and still getting new users.",
+    picture: "/project-picture/gitshowcase-thumb.jpeg",
+    stack: ["Design", "CSS", "Open source"],
     url: "https://gitshowcase.com",
     github_repo: "https://github.com/gitshowcase/gitshowcase",
     links: [
       {
         type: "link",
-        label: "Example",
-        url: "https://gitshowcase.com/victorgaard",
+        label: "Article",
+        url: "https://www.freecodecamp.org/news/we-launched-an-open-source-product-what-happens-now-e586b6d8b99c/",
       },
       {
         type: "github",
@@ -116,6 +117,11 @@ export const projects: Project[] = [
         type: "star",
         label: "Star",
         url: "https://github.com/gitshowcase/gitshowcase",
+      },
+      {
+        type: "productHunt",
+        label: "4th PotD",
+        url: "https://www.producthunt.com/products/git-showcase#gitshowcase",
       },
     ],
   },
