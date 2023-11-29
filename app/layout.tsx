@@ -6,6 +6,7 @@ import { ThemeProvider } from "@providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://victorsantos.work"),
   title: "Victor F. Santos",
   applicationName: "Victor F. Santos - Frontend Engineer",
   description: "Bridging the gap between UX and Frontend engineering.",
@@ -22,6 +23,10 @@ export const metadata: Metadata = {
   openGraph: {
     images: "/metadata/thumbnail.png",
     type: "website",
+  },
+  icons: {
+    icon: "/metadata/icon.png",
+    apple: "/metadata/apple-touch-icon.png",
   },
 };
 
