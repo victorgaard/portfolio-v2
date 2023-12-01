@@ -21,8 +21,8 @@ function SectionSummary() {
         enterprises, consulting.
       </Typography.Paragraph>
       <Typography.Paragraph>
-        My main goal today is pairing my UX and product background with web
-        development to craft exceptional and technically robust products.
+        My main goal today is pairing my UX and product background with frontend
+        to craft exceptional and technically robust products.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Outside work, you will find me{" "}
@@ -32,14 +32,14 @@ function SectionSummary() {
         >
           at metal concerts
         </TextLink>
-        , hiking into nature for{" "}
+        , hiking for{" "}
         <TextLink
           href="https://www.instagram.com/hunter.graphy"
           className="decoration-emerald-500"
         >
           landscape photography
         </TextLink>
-        , or playing Hollow Knight.
+        , or playing games.
       </Typography.Paragraph>
     </Section>
   );

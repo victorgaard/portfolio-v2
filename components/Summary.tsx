@@ -3,7 +3,7 @@ import { Typography } from "@components/Typography";
 function Summary() {
   return (
     <div className="flex flex-col gap-1.5">
-      <Typography.H2 className="font-bold tracking-tight">
+      <Typography.H2 className="font-semibold tracking-tight">
        Victor F. Santos
       </Typography.H2>
       <Typography.H5 className="font-medium tracking-tight">

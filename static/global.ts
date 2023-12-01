@@ -45,9 +45,10 @@ export const experience: Experience[] = [
     description: `Tailwarden is a cloud infrastructure visibility product built on top of Komiser, our open source tool. As a Frontend engineer I:`,
     responsibilities: [
       `Developed core features for Tailwarden: cloud inventory, tag management, filters, custom views, reporting widgets, and more.`,
-      `Improved our practices by documenting components on Storybook, writing unit tests for utils with Jest, and writing component tests with Testing Library.`,
+      `Improved our practices by documenting components on Storybook, and writing unit tests with Jest and React Testing Library.`,
+      `Collaborated with our product designers via design reviews and weekly meetings.`,
       `Actively participated in the hiring process of new engineers, helping with technical challenges assessment, interviewing, and onboarding.`,
-      `Migrated Komiser from Angular to React, added base features and wrote documentation for contributors.`,
+      `Contributed to Open Source with Komiser: migrating the app from Angular to React, writing documentation for contributors, and implementing Storybook and testing.`,
     ],
     links: [
       { label: "Tailwarden", url: "https://tailwarden.com" },
@@ -66,7 +67,7 @@ export const experience: Experience[] = [
     start: "2015-03-01",
     end: "2022-03-01",
     stack: ["Figma", "Product Design", "UX Research"],
-    description: `Before transitioning to a Frontend Engineer, I worked as an experienced product designer for multiple global companies including: Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
+    description: `Before transitioning to Frontend, I worked as a product designer for multiple global companies including Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
     responsibilities: [],
     links: [
       { label: "Datadog", url: "https://datadoghq.com" },
