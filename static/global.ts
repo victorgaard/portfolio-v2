@@ -16,6 +16,13 @@ export const recommendations: Recommendation[] = [
     message: `Victor is super quick to understand new concepts, and it was a real pleasure working with him on new features and introducing new tools and libraries to make our Frontend more sophisticated. He is open to new ideas and improvements, and thinks critically about new features. His product design background is a super-power when it comes to Frontend development, because he constantly thinks about the UX and the big picture of the whole product. I got to know him as a very pro-active engineer, eager to learn and seeking feedback from his peers. In short, if you're in need of a skilled frontend engineer, you can't go wrong with Victor :)`,
   },
   {
+    name: "Yoan Almeida",
+    picture: "/recommendation-picture/yoan.jpeg",
+    title: "Senior Product Designer @ Tailwarden",
+    relationship: "Worked together at Tailwarden",
+    message: `Victor is a joy to work with, thanks to his attention to detail and positive attitude every day. He actively participates in product design discussions, and his background as a designer is a significant asset, especially for collaboration across tech and product teams. Victor is always transparent and provides well-constructed feedback, making it easy to exchange ideas with him. He is highly proactive in implementing specifications and consistently strives to offer the best user experience to build the best product. I can only recommend working with him :)`,
+  },
+  {
     name: "Pedro Moreira",
     picture: "/recommendation-picture/pedro.jpeg",
     title: "Senior Software Engineer Consultant",
