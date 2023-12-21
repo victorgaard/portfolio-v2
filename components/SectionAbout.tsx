@@ -32,14 +32,14 @@ function SectionSummary() {
         >
           at metal concerts
         </TextLink>
-        , hiking for{" "}
+        , wandering around for{" "}
         <TextLink
           href="https://www.instagram.com/hunter.graphy"
           className="decoration-emerald-500"
         >
           landscape photography
         </TextLink>
-        , or playing games.
+        , or playing Hollow Knight.
       </Typography.Paragraph>
     </Section>
   );

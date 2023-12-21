@@ -9,6 +9,13 @@ export const sections = [
 
 export const recommendations: Recommendation[] = [
   {
+    name: "Mohamed Labouardy",
+    picture: "/recommendation-picture/mohamed.jpeg",
+    title: "CTO @ Tailwarden",
+    relationship: "Manager at Tailwarden",
+    message: `As Victor's manager at Tailwarden, I've seen his extraordinary contributions first-hand. Victor excelled in developing core features for our open-source project, Komiser, and our flagship product, Tailwarden, showcasing his skills in frontend stack like React and TypeScript. He was instrumental in evolving our tech stack and played a key role in scaling our engineering team from 1 to 4, highlighting his technical skills and adaptability in an early stage environment. His combined skills in tech and design make him an asset to any team.`,
+  },
+  {
     name: "Enes Kaya",
     picture: "/recommendation-picture/enes.jpeg",
     title: "Software Engineer @ Spotify",
