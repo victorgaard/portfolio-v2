@@ -56,13 +56,17 @@ export const experience: Experience[] = [
       "Jest & Testing Library",
       "Open source",
     ],
-    description: `Tailwarden is a cloud infrastructure visibility product built on top of Komiser, our open source tool. As a Frontend engineer I:`,
+    description: `Tailwarden is a cloud infrastructure visibility product built on top of Komiser, our open source tool.`,
     responsibilities: [
-      `Developed core features for Tailwarden: cloud inventory, tag management, filters, custom views, reporting widgets, and more.`,
-      `Improved our practices by documenting components on Storybook, and writing unit tests with Jest and React Testing Library.`,
-      `Collaborated with our product designers via design reviews and weekly meetings.`,
-      `Actively participated in the hiring process of new engineers, helping with technical challenges assessment, interviewing, and onboarding.`,
-      `Contributed to Open Source with Komiser: migrating the app from Angular to React, writing documentation for contributors, and implementing Storybook and testing.`,
+      `Developed core features for our open-source project, Komiser
+      (3M+ downloads), and our flagship product, Tailwarden.`,
+      `First hire in the engineering team, helping scale the team from 1
+      to 4. Actively participated in the hiring process: interviews, code
+      assessments, and onboarding of new peers.`,
+      `Improved practices by documenting components on Storybook,
+      and writing unit tests with Jest and React Testing Library.`,
+      `Collaborated with our product designers via design reviews and
+      weekly meetings.`,
     ],
     links: [
       { label: "Tailwarden", url: "https://tailwarden.com" },
@@ -81,13 +85,18 @@ export const experience: Experience[] = [
     start: "2015-03-01",
     end: "2022-03-01",
     stack: ["Figma", "Product Design", "UX Research"],
-    description: `Before transitioning to Frontend, I worked as a product designer for multiple global companies including Datadog (Sqreen), Rasa, Prezi, Scalable Path & more.`,
-    responsibilities: [],
+    description: `Before transitioning to Frontend, I worked as a product designer for multiple global companies including Datadog, Rasa, Prezi, and more.`,
+    responsibilities: [
+      `Worked as an IC in all phases of the design process including user
+    research, interaction design, wireframing, prototyping, visual
+    design, handover specs, and usability testing.`,
+      `Influenced product decisions through insights and creative
+      problem-solving skills.`,
+    ],
     links: [
       { label: "Datadog", url: "https://datadoghq.com" },
       { label: "Rasa", url: "https://rasa.com" },
       { label: "Prezi", url: "https://prezi.com" },
-      { label: "Scalable Path", url: "https://scalablepath.com" },
     ],
   },
 ];

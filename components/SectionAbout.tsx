@@ -11,7 +11,7 @@ function SectionSummary() {
       <Typography.Paragraph>
         I currently work at{" "}
         <TextLink href="https://tailwarden.com">Tailwarden</TextLink>, where I
-        ship core features with my team using Next.js, React, and Typescript to
+        ship core features with my team using React, Next.js and Typescript to
         help companies have more visibility into costs and usage from their
         cloud infrastructure.
       </Typography.Paragraph>
