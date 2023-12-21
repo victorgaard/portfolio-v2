@@ -79,13 +79,13 @@ export const experience: Experience[] = [
   },
   {
     role: "Product Designer",
-    company: "Multiple companies",
+    company: "Datadog, Rasa, and other companies",
     logo: "/logo/design-companies.png",
     url: "",
     start: "2015-03-01",
     end: "2022-03-01",
     stack: ["Figma", "Product Design", "UX Research"],
-    description: `Before transitioning to Frontend, I worked as a product designer for multiple global companies including Datadog, Rasa, Prezi, and more.`,
+    description: `Before transitioning to Frontend, I worked as a product designer for multiple global companies including Datadog, Rasa, Prezi, Scalable Path and more.`,
     responsibilities: [
       `Worked as an IC in all phases of the design process including user
     research, interaction design, wireframing, prototyping, visual
@@ -97,6 +97,7 @@ export const experience: Experience[] = [
       { label: "Datadog", url: "https://datadoghq.com" },
       { label: "Rasa", url: "https://rasa.com" },
       { label: "Prezi", url: "https://prezi.com" },
+      { label: "Scalable Path", url: "https://scalablepath.com" },
     ],
   },
 ];
