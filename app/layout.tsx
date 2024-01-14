@@ -9,14 +9,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://victorsantos.work"),
   title: "Victor F. Santos",
-  applicationName: "Victor F. Santos - Frontend Engineer",
-  description: "Bridging the gap between UX and Frontend engineering.",
+  applicationName: "Victor F. Santos - Product Engineer",
+  description:
+    "Bridging the gap between Product, UX, and Frontend engineering.",
   referrer: "origin-when-cross-origin",
   keywords: [
     "Victor F. Santos",
     "Victor Frontend",
+    "Victor Product",
     "Victor React",
     "Victor Next.js",
+    "product engineer",
+    "design engineer",
     "frontend engineer",
     "frontend developer",
     "frontend",

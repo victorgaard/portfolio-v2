@@ -21,8 +21,8 @@ export default function Home() {
         <div className="pb-12 lg:col-span-5 lg:px-10 lg:pb-24">
           <SectionSummary />
           <SectionRecommendations />
-          <SectionExperience />
           <SectionProjects />
+          <SectionExperience />
           <Footer />
         </div>
       </div>

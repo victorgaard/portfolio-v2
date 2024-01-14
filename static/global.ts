@@ -3,8 +3,8 @@ import { Experience, Project, Recommendation } from "./types";
 export const sections = [
   "summary",
   "recommendations",
-  "experience",
   "projects",
+  "experience",
 ] as const;
 
 export const recommendations: Recommendation[] = [

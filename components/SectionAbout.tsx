@@ -6,7 +6,7 @@ function SectionSummary() {
   return (
     <Section id="summary" title="👋 Hey, I'm Victor">
       <Typography.Paragraph>
-        I&apos;m a frontend engineer, optimistic nihilist and lifelong learner.
+        I&apos;m a product engineer, optimistic nihilist and lifelong learner.
       </Typography.Paragraph>
       <Typography.Paragraph>
         I currently work at{" "}
@@ -18,7 +18,7 @@ function SectionSummary() {
       <Typography.Paragraph>
         Before that, I was an experienced product designer working closely with
         end users and product teams in all kinds of setups: startups, scaleups,
-        enterprises, consulting.
+        enterprises, and consulting.
       </Typography.Paragraph>
       <Typography.Paragraph>
         My main goal today is pairing my UX and product background with frontend
