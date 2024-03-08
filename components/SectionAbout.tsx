@@ -10,7 +10,15 @@ function SectionSummary() {
       </Typography.Paragraph>
       <Typography.Paragraph>
         I currently work at <em>(TBA)</em> 😅 ...well, perhaps it could be your
-        company? Get in touch if we might be a fit!
+        company?
+        <br />
+        <TextLink
+          href="mailto:hey@victorsantos.work"
+          className="decoration-amber-500"
+        >
+          Get in touch
+        </TextLink>{" "}
+        if we might be a fit.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Previously, I was working at{" "}
