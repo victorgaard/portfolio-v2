@@ -45,7 +45,7 @@ export const experience: Experience[] = [
     logo: "/logo/tailwarden.svg",
     url: "https://tailwarden.com",
     start: "2022-06-01",
-    end: null,
+    end: "2024-02-01",
     stack: [
       "Next.js",
       "React",
@@ -104,6 +104,26 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "Playground",
+    description:
+      "Playground is a design system documentation tool for React. It's a lighter alternative to Storybook.",
+    picture: "/project-picture/playground-thumb.jpg",
+    stack: ["React", "Typescript", "Tailwind", "TanStack Router", "Vite"],
+    url: "https://playground.victorsantos.work/",
+    links: [
+      {
+        type: "link",
+        label: "Demo",
+        url: "https://playground.victorsantos.work/",
+      },
+      {
+        type: "github",
+        label: "GitHub",
+        url: "https://github.com/victorgaard/playground",
+      },
+    ],
+  },
+  {
     title: "Saw that band",
     description:
       "Bands seen live tracking app. Setlists, charts, and reports are generated based on band genres, concert locations, and more.",
@@ -113,7 +133,7 @@ export const projects: Project[] = [
     links: [
       {
         type: "link",
-        label: "Live",
+        label: "Demo",
         url: "https://victor.sawthat.band/",
       },
       {

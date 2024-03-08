@@ -7,10 +7,10 @@ function Summary() {
         Victor F. Santos
       </Typography.H2>
       <Typography.H5 className="font-medium tracking-tight">
-        Product Engineer
+        Engineering & Design
       </Typography.H5>
       <Typography.Paragraph className="max-w-xs [text-wrap:balance]">
-        Bridging the gap between Product, UX, and Frontend engineering.
+        Bridging the gap between Product, Design, and Frontend engineering.
       </Typography.Paragraph>
     </div>
   );

@@ -9,11 +9,15 @@ function SectionSummary() {
         I&apos;m a product engineer, optimistic nihilist and lifelong learner.
       </Typography.Paragraph>
       <Typography.Paragraph>
-        I currently work at{" "}
+        I currently work at <em>(TBA)</em> 😅 ...well, perhaps it could be your
+        company? Get in touch if we might be a fit!
+      </Typography.Paragraph>
+      <Typography.Paragraph>
+        Previously, I was working at{" "}
         <TextLink href="https://tailwarden.com">Tailwarden</TextLink>, where I
-        ship core features with my team using React, Next.js and Typescript to
-        help companies have more visibility into costs and usage from their
-        cloud infrastructure.
+        helped my team shipping core features with React, Next.js and
+        Typescript, so other companies could have more visibility into costs and
+        usage from their cloud infrastructure.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Before that, I was an experienced product designer working closely with
@@ -22,7 +26,7 @@ function SectionSummary() {
       </Typography.Paragraph>
       <Typography.Paragraph>
         My main goal today is pairing my UX and product background with frontend
-        to craft exceptional and technically robust products.
+        engineering to craft exceptional and technically robust products.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Outside work, you will find me{" "}
