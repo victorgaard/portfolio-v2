@@ -40,16 +40,34 @@ export const recommendations: Recommendation[] = [
 
 export const experience: Experience[] = [
   {
+    role: "Design Engineer",
+    company: "Fleek",
+    logo: "/logo/fleek.svg",
+    url: "https://fleek.xyz",
+    start: "2024-07-01",
+    end: null,
+    stack: ["React", "Typescript", "Next.js", "Tailwind", "Storybook"],
+    description:
+      "Fleek is an edge-optimized cloud platform where users can prepare, host and deploy Web sites and applications.",
+    responsibilities: [
+      "Improve and maintain Fleek's design system.",
+      "Build complex and interactive UI experiences.",
+      "Prototype ideas in code for usability tests with users.",
+      "Close collaboration with the design and product teams.",
+    ],
+    links: [{ label: "Fleek", url: "https://fleek.xyz" }],
+  },
+  {
     role: "Frontend Engineer",
     company: "Tailwarden",
     logo: "/logo/tailwarden.svg",
     url: "https://tailwarden.com",
     start: "2022-06-01",
-    end: "2024-02-01",
+    end: "2024-03-01",
     stack: [
-      "Next.js",
       "React",
       "Typescript",
+      "Next.js",
       "Tailwind",
       "React Query",
       "Storybook",

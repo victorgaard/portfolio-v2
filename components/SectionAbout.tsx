@@ -6,19 +6,18 @@ function SectionSummary() {
   return (
     <Section id="summary" title="👋 Hey, I'm Victor">
       <Typography.Paragraph>
-        I&apos;m a product engineer, optimistic nihilist and lifelong learner.
+        I&apos;m a design engineer, optimistic nihilist and lifelong learner.
       </Typography.Paragraph>
       <Typography.Paragraph>
-        I currently work at <em>(TBA)</em> 😅 ...well, perhaps it could be your
-        company?
-        <br />
+        I currently work at{" "}
         <TextLink
-          href="mailto:hey@victorsantos.work"
-          className="decoration-amber-500"
+          href="https://tailwarden.com"
+          className="decoration-amber-400"
         >
-          Get in touch
-        </TextLink>{" "}
-        if we might be a fit.
+          Fleek
+        </TextLink>
+        , where I help my team in all things design system, frontend
+        engineering, interaction design, and accessibility.
       </Typography.Paragraph>
       <Typography.Paragraph>
         Previously, I was working at{" "}
@@ -33,23 +32,19 @@ function SectionSummary() {
         enterprises, and consulting.
       </Typography.Paragraph>
       <Typography.Paragraph>
-        My main goal today is pairing my UX and product background with frontend
-        engineering to craft exceptional and technically robust products.
-      </Typography.Paragraph>
-      <Typography.Paragraph>
-        Outside work, you will find me{" "}
+        Outside of work, you will find me{" "}
         <TextLink
           href="https://victor.sawthat.band/?utm_source=victorsantoswork"
           className="decoration-sky-500"
         >
           at metal concerts
         </TextLink>
-        , wandering around for{" "}
+        , wandering in the wilderness{" "}
         <TextLink
           href="https://www.instagram.com/hunter.graphy"
           className="decoration-emerald-500"
         >
-          landscape photography
+          with a camera
         </TextLink>
         , or playing Hollow Knight.
       </Typography.Paragraph>
