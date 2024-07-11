@@ -11,7 +11,7 @@ function SectionSummary() {
       <Typography.Paragraph>
         I currently work at{" "}
         <TextLink
-          href="https://tailwarden.com"
+          href="https://fleek.xyz"
           className="decoration-amber-400"
         >
           Fleek
