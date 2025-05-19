@@ -9,6 +9,13 @@ export const sections = [
 
 export const recommendations: Recommendation[] = [
   {
+    name: "Nate Chastain",
+    picture: "/recommendation-picture/nate.jpg",
+    title: "Head of Product @ Fleek",
+    relationship: "Worked together at Fleek",
+    message: `Victor is not only pixel-perfect in his adherence to designs, but also fully capable of owning and delivering features end-to-end. He is a rare engineer in that he displays an obvious care for his craft and was beloved by both our designer and frontend engineering manager as a result. Victor often engaged me as a product manager in discussions around requirements and implementation that demonstrated a deep understanding of user experience. He is thoughtful about product in a way that every product manager hopes engineers reading over a spec or a requirements list will be. Beyond that, I found Victor to be professional, easy-going, and good-natured in our interactions. We worked for a company during a tumultuous period in which there was a significant pivot and restructuring of the technical team, and yet every sprint he was able to remain focused and engaged with the work. I recommend Victor wholeheartedly and consider him one of the top five frontend engineers that I've worked with.`,
+  },
+  {
     name: "Mohamed Labouardy",
     picture: "/recommendation-picture/mohamed.jpeg",
     title: "CTO @ Tailwarden",
