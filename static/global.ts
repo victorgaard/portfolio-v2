@@ -52,7 +52,7 @@ export const experience: Experience[] = [
     logo: "/logo/fleek.svg",
     url: "https://fleek.xyz",
     start: "2024-07-01",
-    end: null,
+    end: "2025-07-01",
     stack: ["React", "Typescript", "Next.js", "Tailwind", "Storybook"],
     description:
       "Fleek is an edge-optimized cloud platform where users can prepare, host and deploy Web sites and applications.",
